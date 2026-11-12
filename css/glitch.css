@@ -1,0 +1,24 @@
+/* Glitch effect: copy of the text sits behind, tinted and shifted, and jitters. */
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;inset:0;overflow:hidden}
+.glitch::before,.glitch::after{clip-path:inset(0 0 100% 0)}
+.glitch::before{color:#ff2d95;transform:translate(-2px,0)}
+.glitch::after{color:#00fff0;transform:translate(2px,0)}
+/* The glitch only plays in short bursts (js/main.js toggles body.g-on every few seconds),
+   so the browser is idle the rest of the time. */
+body.g-on .glitch::before{animation:slice1 .5s steps(1)}
+body.g-on .glitch::after{animation:slice2 .5s steps(1)}
+
+@keyframes slice1{
+  0%,100%{clip-path:inset(0 0 100% 0)}
+  30%{clip-path:inset(10% 0 60% 0);transform:translate(-5px,0)}
+  70%{clip-path:inset(55% 0 20% 0);transform:translate(4px,0)}
+}
+@keyframes slice2{
+  0%,100%{clip-path:inset(0 0 100% 0)}
+  35%{clip-path:inset(40% 0 35% 0);transform:translate(5px,0)}
+  75%{clip-path:inset(75% 0 5% 0);transform:translate(-4px,0)}
+}
+@keyframes blink{50%{opacity:0}}
+.card:hover .avatar{animation:shake .25s 2}
+@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}

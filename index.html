@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>glitched | NRL Robotics Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@300;400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glitch.css">
+  <link rel="stylesheet" href="css/decor.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/slides.css">
+  <link rel="stylesheet" href="css/bg.css">
+  <link rel="stylesheet" href="css/team.css">
+  <link rel="stylesheet" href="css/neon.css">
+  <link rel="stylesheet" href="css/fpattern.css">
+  <link rel="stylesheet" href="css/polish.css">
+  <link rel="icon" href="images/logo.png">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div id="intro" aria-hidden="true">
+    <div class="shutter top"></div>
+    <div class="shutter bottom"></div>
+    <div class="gate" id="gate">
+      <span class="gate-glow"></span>
+      <span class="gate-line"></span>
+      <i class="gc tl"></i><i class="gc tr"></i><i class="gc bl"></i><i class="gc br"></i>
+      <div class="gate-main">
+        <h1 class="glitch gate-title" data-text="glitched">glitched</h1>
+        <p class="gate-sub"><span id="gateSub"></span><span class="gate-caret">_</span></p>
+        <button class="gate-enter" id="gateEnter" type="button"><span class="gate-colon">:</span>click enter</button>
+      </div>
+    </div>
+    <div class="intro-core">
+      <canvas id="introCanvas"></canvas>
+      <div class="intro-hud"><span id="introLabel">01 / IGNITION</span><span id="introTime">0.0s</span></div>
+      <div class="intro-final">
+        <img class="intro-mark" src="images/logo.png" alt="">
+        <h1 class="glitch intro-logo" data-text="glitched">glitched</h1>
+      </div>
+      <div class="intro-bar"><span id="introFill"></span></div>
+      <p class="intro-hint">click or press any key to skip</p>
+    </div>
+  </div>
+  <header class="nav">
+    <a class="brand" href="index.html#top"><img src="images/logo.png" alt=""><span class="logo glitch" data-text="glitched">glitched</span></a>
+    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav">
+      <a href="#about">About NRL</a>
+      <a href="#challenge">Challenge</a>
+      <a href="#build">Our build</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero slide">
+      <div class="hero-text">
+      <h1 class="glitch big" data-text="glitched">glitched</h1>
+      <p class="boot"><span id="typed"></span><span class="cursor">_</span></p>
+      <p class="sub">We are an eight-student team building an autonomous automobile for the National Robotics League, almost entirely through code.</p>
+      <div class="system-readout" aria-label="Team and project status">
+        <span><i></i> SYSTEM ONLINE</span><span>NRL / AUTOMOBILE</span><span>TEAM SIZE: 08</span>
+      </div>
+      <a class="btn" href="#team">Meet the team</a>
+      </div>
+      <div class="logo-hud"><span class="glow"></span><img src="images/logo.png" alt="glitched logo"><span class="hud-tag">GLITCHED // NRL TEAM</span></div>
+      <div class="scroll-hint">scroll</div>
+    </section>
+    <div class="marquee" aria-hidden="true"><div class="mq-track"><span>CODE</span><i>✦</i><span>BUILD</span><i>✦</i><span>REPEAT</span><i>✦</i><span>AUTONOMOUS</span><i>✦</i><span>NRL</span><i>✦</i><span>EIGHT MINDS</span><i>✦</i><span>ONE ROBOT</span><i>✦</i><span>CODE</span><i>✦</i><span>BUILD</span><i>✦</i><span>REPEAT</span><i>✦</i><span>AUTONOMOUS</span><i>✦</i><span>NRL</span><i>✦</i><span>EIGHT MINDS</span><i>✦</i><span>ONE ROBOT</span><i>✦</i></div></div>
+
+
+    <section id="about" class="wrap slide">
+      <p class="eyebrow">01 // about</p>
+      <h2>About NRL</h2>
+      <p class="lead">Students <strong>design, build and battle</strong> robots in a high-energy arena. What is really being built <strong>runs deeper</strong>.</p>
+      <ul class="points">
+        <li><span class="num">01</span><h3>Compete fast</h3><p>Matches, skill challenges and team presentations put every decision under pressure.</p></li>
+        <li><span class="num">02</span><h3>Think on your feet</h3><p>You learn to lead, adapt and improvise the moment the plan breaks.</p></li>
+        <li><span class="num">03</span><h3>Science meets story</h3><p>Curiosity becomes capability, and bold ideas become something you can demonstrate.</p></li>
+      </ul>
+
+      <h2 class="h-sub">About Glitched</h2>
+      <p class="lead sm">Eight students, one <strong>code-driven automobile robot</strong>, and a pilot at the controls.</p>
+      <div class="stats">
+        <div><b>8</b><span>members</span></div>
+        <div><b>1</b><span>pilot</span></div>
+        <div><b>1</b><span>robot, run by code</span></div>
+      </div>
+      <ul class="roles">
+        <li><strong>Code</strong> drive logic and strategy</li>
+        <li><strong>Piloting</strong> navigating and driving</li>
+        <li><strong>Leadership</strong> direction under pressure</li>
+        <li><strong>Creative</strong> video and editing</li>
+        <li><strong>Marketing</strong> ads, social, editorial</li>
+      </ul>
+      <p class="closer">Together we aim for technical excellence, strategic thinking and real collaboration.</p>
+    </section>
+
+    <section id="challenge" class="wrap slide">
+      <p class="eyebrow">02 // challenge</p>
+      <h2>The challenge</h2>
+      <p>Every team receives the <strong>same automobile components</strong>. What the vehicle does is <strong>decided by the code</strong>. All 8 members contribute through different methods involving writing the code, piloting the automobile, marketing, videographing, editing, strategizing and team management.</p>
+      <ol class="steps">
+        <li><h3>Receive the parts</h3><p>Motors, sensors, chassis, and a controller. Identical for every team. Advertising the team occurs during this stage.</p></li>
+        <li><h3>Code it to life</h3><p>Drive logic, sensor handling, and strategy are all written by us.</p></li>
+        <li><h3>Compete</h3><p>Fast-paced matches, skill challenges, and a team presentation to the judges.</p></li>
+      </ol>
+    </section>
+
+    <section id="build" class="wrap slide">
+      <p class="eyebrow">03 // build</p>
+      <h2>Our build</h2>
+      <p>Replace this with your real details. A log of what broke and how you fixed it is the most convincing thing on the page.</p>
+      <div class="terminal">
+        <div class="tbar"><i></i><i></i><i></i><span>test_drive.py</span></div>
+        <p><span class="dim">$</span> run test_drive.py</p>
+        <p class="err">ERROR: left motor drifts at low speed</p>
+        <p class="ok">FIXED: added PID correction to wheel speed</p>
+        <p class="err">ERROR: distance sensor noisy near walls</p>
+        <p class="ok">FIXED: averaged last 5 readings</p>
+      </div>
+      <a class="btn back" href="build-log.html">Read the full build log</a>
+    </section>
+
+    <section id="team" class="wrap slide">
+      <p class="eyebrow">04 // team</p>
+      <h2>Meet the team</h2>
+      <div id="mentor"></div>
+      <div id="members" class="strips"></div>
+    </section>
+  </main>
+
+  <footer id="contact" class="slide">
+    <div class="logo-hud small"><span class="glow"></span><img src="images/logo.png" alt="glitched logo"></div>
+    <h2 class="glitch" data-text="glitched">glitched</h2>
+    <p class="contact-line"><a id="contact-address" href="mailto:home.smart010203@gmail.com">home.smart010203@gmail.com</a><button class="copy-email" type="button" data-copy="home.smart010203@gmail.com" aria-label="Copy email address">COPY</button><span aria-hidden="true">&nbsp;|&nbsp;</span><span>_glitch_d</span></p>
+    <p class="dim">Code . Build . Repeat</p>
+  </footer>
+
+  <script src="js/fx.js"></script>
+  <script src="js/bg.js"></script>
+  <script src="js/ambient.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/team.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/circuit.js"></script>
+  <script src="js/polish.js"></script>
+</body>
+</html>

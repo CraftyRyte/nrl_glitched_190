@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build log | glitched</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glitch.css">
+  <link rel="stylesheet" href="css/decor.css">
+  <link rel="stylesheet" href="css/slides.css">
+  <link rel="stylesheet" href="css/bg.css">
+  <link rel="stylesheet" href="css/team.css">
+  <link rel="stylesheet" href="css/neon.css">
+  <link rel="stylesheet" href="css/fpattern.css">
+  <link rel="stylesheet" href="css/polish.css">
+  <link rel="icon" href="images/logo.png">
+  <style>html{scroll-snap-type:none}</style>
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <header class="nav">
+    <a class="brand" href="index.html#top"><img src="images/logo.png" alt=""><span class="logo glitch" data-text="glitched">glitched</span></a>
+    <button class="menu-btn" aria-label="Toggle menu">Menu</button>
+    <nav>
+      <a href="index.html#about">About NRL</a>
+      <a href="index.html#challenge">Challenge</a>
+      <a href="index.html#build">Our build</a>
+      <a href="index.html#team">Team</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="wrap" style="padding-top:8rem;min-height:100vh">
+      <h2>Build log</h2>
+      <p class="lead">Every bug we hit and how we fixed it. Replace these sample entries with your real ones.</p>
+      <div class="log-list">
+        <div class="log-entry"><h3>Entry 01: left motor drift</h3><p class="err">ERROR: left motor drifts at low speed</p><p class="ok">FIXED: added PID correction to wheel speed</p></div>
+        <div class="log-entry"><h3>Entry 02: noisy distance sensor</h3><p class="err">ERROR: distance sensor noisy near walls</p><p class="ok">FIXED: averaged last 5 readings</p></div>
+        <div class="log-entry"><h3>Entry 03: your next entry</h3><p class="dim">Add what broke, what you tried, and what finally worked.</p></div>
+      </div>
+      <a class="btn back" href="index.html#build">Back to the site</a>
+    </section>
+  </main>
+  <script src="js/fx.js"></script>
+  <script src="js/bg.js"></script>
+  <script src="js/ambient.js"></script>
+  <script>
+    const nav=document.querySelector("nav");
+    document.querySelector(".menu-btn").addEventListener("click",()=>nav.classList.toggle("open"));
+  </script>
+  <script src="js/polish.js"></script>
+</body>
+</html>

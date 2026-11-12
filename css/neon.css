@@ -1,0 +1,37 @@
+/* Neon pink accents, kept subtle: borders, nodes, small labels. Change --pink to retune the whole site. */
+:root{--pink:#ff2d95;--pink-dim:#8f1a55}
+::selection{background:var(--pink);color:#000}
+:focus-visible{outline-color:var(--pink)}
+html{scrollbar-color:var(--pink-dim) #05070d}
+
+/* nav: cyan-to-pink underline */
+.nav{border-bottom:1px solid transparent!important;border-image:linear-gradient(90deg,var(--blue),var(--line) 45%,var(--pink)) 1}
+nav a:hover{color:var(--pink)}
+
+/* section headings: pink node + cyan-to-pink rule */
+.wrap h2::before{content:"";flex:none;width:8px;height:8px;background:var(--pink);box-shadow:0 0 10px var(--pink);order:-1}
+.wrap h2::after{background:linear-gradient(90deg,var(--blue-dim),var(--pink-dim) 70%,transparent)!important}
+
+/* panels: bottom-right corner bracket in pink */
+.card::after,.mentor::after,.steps li::after,.terminal::after{border-color:var(--pink)!important}
+.steps h3::before{color:var(--pink)}
+.terminal .tbar i:first-child{background:var(--pink)}
+.err{color:var(--pink)}
+.cursor{color:var(--pink)}
+
+/* buttons: pink offset shadow, fills cyan on hover as before */
+.btn{box-shadow:4px 4px 0 rgba(255,45,149,.4)}
+.btn:hover{box-shadow:0 0 24px rgba(0,200,255,.5),4px 4px 0 var(--pink)}
+
+/* slide dots */
+.dots button.on{background:var(--pink);border-color:var(--pink);box-shadow:0 0 10px var(--pink)}
+.dots button:hover{border-color:var(--pink)}
+
+/* hero + footer details */
+.hud-tag{color:var(--pink-dim)}
+footer::before{background:linear-gradient(90deg,transparent,var(--blue),var(--pink),transparent)!important;box-shadow:0 0 14px var(--pink)!important}
+footer p:first-of-type{color:var(--text)}
+.scroll-hint::after{border-color:var(--pink)}
+
+/* glitch text uses the neon pink offset */
+.glitch::before{color:var(--pink)!important}

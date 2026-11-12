@@ -1,0 +1,71 @@
+:root{
+  --bg:#05070d; --panel:#0b1019; --line:#16233a;
+  --blue:#00c8ff; --blue-dim:#0a6f8f; --text:#d9e4f2; --muted:#7f90a8;
+  --head:'Chakra Petch',sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 1.05rem/1.7 var(--body);
+  background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 1px,transparent 1px 3px)}
+h1,h2,h3{font-family:var(--head);line-height:1.15}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1rem}
+h3{font-size:1.2rem;margin-bottom:.4rem}
+p{max-width:68ch;margin-bottom:1rem}
+.wrap{max-width:1000px;margin:0 auto;padding:5rem 1.5rem 1rem}
+.dim,.sub{color:var(--muted)}
+.lead{font-size:1.25rem}
+
+.nav{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+  padding:.9rem 1.5rem;background:rgba(5,7,13,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo{font:700 1.3rem var(--head);color:var(--blue);text-decoration:none}
+nav a{color:var(--text);text-decoration:none;margin-left:1.5rem;font-size:.95rem}
+nav a:hover{color:var(--blue)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:.4rem .8rem;font:inherit}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  padding:6rem 1.5rem 3rem;max-width:1000px;margin:0 auto}
+.big{font-size:clamp(3.5rem,14vw,9rem);color:var(--blue);margin-bottom:1rem}
+.boot{font:500 1.2rem var(--head);color:var(--blue)}
+.cursor{animation:blink 1s steps(1) infinite}
+.sub{margin:1rem 0 2rem}
+.btn{display:inline-block;padding:.8rem 1.8rem;border:1px solid var(--blue);color:var(--blue);text-decoration:none;font-family:var(--head);transition:.2s}
+.btn:hover{background:var(--blue);color:var(--bg);box-shadow:0 0 24px rgba(0,200,255,.5)}
+
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;counter-reset:s}
+.steps li{padding:1.4rem;border-left:2px solid var(--blue);background:var(--panel);counter-increment:s}
+.steps h3::before{content:counter(s) ". ";color:var(--blue)}
+.steps p{color:var(--muted);margin:0}
+
+.terminal{background:var(--panel);border:1px solid var(--line);padding:1.2rem 1.5rem;font:.95rem/1.8 ui-monospace,Consolas,monospace}
+.terminal p{margin:0}
+.err{color:#ff5c7a}.ok{color:var(--blue)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.4rem}
+.card{background:var(--panel);border:1px solid var(--line);padding:1.2rem;transition:.2s}
+.card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 0 22px rgba(0,200,255,.15)}
+.avatar{aspect-ratio:1;display:grid;place-items:center;background:#0f1a2b;margin-bottom:1rem;overflow:hidden;
+  font:700 2.4rem var(--head);color:var(--blue)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.card .role{color:var(--blue);font-size:.9rem;margin-bottom:.4rem}
+.card p{font-size:.95rem;color:var(--muted);margin:0}
+.mentor{display:grid;grid-template-columns:240px 1fr;gap:2rem;align-items:center;margin-bottom:2rem;padding:1.6rem;
+  border:1px solid var(--blue);background:var(--panel);box-shadow:0 0 30px rgba(0,200,255,.12)}
+.mentor .avatar{margin:0}
+.mentor p{margin:0 0 .6rem}
+
+footer{margin-top:5rem;padding:4rem 1.5rem;text-align:center;border-top:1px solid var(--line)}
+footer p{margin:0 auto .6rem}
+footer h2{color:var(--blue)}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.show{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+@media(max-width:760px){
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);padding:1rem 1.5rem;border-bottom:1px solid var(--line)}
+  nav.open{display:flex;flex-direction:column}
+  nav a{margin:.5rem 0}
+  .steps,.mentor{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
