@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strategy | GLITCHED // Team 190</title>
+<meta name="description" content="How GLITCHED plans to play NRL 2026 Hyperdrive: the autonomous route, driver-controlled scoring, the endgame and an expected score of 41 to 48 points.">
+<meta name="theme-color" content="#0B0B0E">
+<link rel="canonical" href="https://nrlglitched190.vercel.app/strategy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GLITCHED // Team 190">
+<meta property="og:title" content="Strategy | GLITCHED // Team 190">
+<meta property="og:description" content="How GLITCHED plans to play NRL 2026 Hyperdrive: the autonomous route, driver-controlled scoring, the endgame and an expected score of 41 to 48 points.">
+<meta property="og:url" content="https://nrlglitched190.vercel.app/strategy.html">
+<meta property="og:image" content="https://nrlglitched190.vercel.app/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/logo.png">
+<link rel="preload" href="fonts/BigShouldersDisplay.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/InstrumentSans.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>(function(d){d.className="js";if(matchMedia("(min-width: 1001px) and (min-height: 640px)").matches&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("pin")})(document.documentElement)</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<!-- Navigation: keep this block identical on every page -->
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="GLITCHED, Team 190. Home"><img src="images/logo.png" alt="" width="653" height="468"><span>Glitched <i>// Team 190</i></span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav-links" id="nav-links" aria-label="Main"><a href="robot.html">The robot</a><a href="engineering.html">Engineering</a><a href="build-log.html">Build log</a><a href="team.html">Team</a><a href="strategy.html" aria-current="page">Strategy</a></nav>
+</header>
+<main id="main">
+<section class="ph"><div class="wrap">
+  <p class="tag">Strategy</p>
+  <h1 class="d1">The game plan</h1>
+  <p class="lede">We play an offensive game and rarely defend, because contact inside the opponent's perimeter (G4.8) and de-scoring (G4.5) both carry penalties.</p>
+  <nav class="subnav" aria-label="On this page"><a href="#field">The field</a><a href="#phases">Three phases</a><a href="#score">Expected score</a><a href="#autonomous">Autonomous route</a></nav>
+</div></section>
+
+<section class="sec t-paper" id="field"><div class="wrap">
+  <div class="sec-head"><p class="tag">The field</p><h2 class="d2">Where the points are</h2></div>
+  <div class="hs hs-field" data-hs>
+    <div><div class="hs-stage field"><img src="images/field.webp" alt="Top view of the Hyperdrive field, with start zones, drop zones, space stations, vaults, a source zone and rows of poles" width="915" height="918" loading="lazy" decoding="async"><button class="hs-dot" type="button" style="--x:63.5%;--y:68%" data-k="1" aria-pressed="false" aria-label="High Pole">1</button><button class="hs-dot" type="button" style="--x:18.5%;--y:18.5%" data-k="2" aria-pressed="false" aria-label="Drop Zone">2</button><button class="hs-dot" type="button" style="--x:21.8%;--y:36.4%" data-k="3" aria-pressed="false" aria-label="Space Station">3</button><button class="hs-dot" type="button" style="--x:79.5%;--y:21%" data-k="4" aria-pressed="false" aria-label="Source Zone">4</button></div><p class="cap">The Hyperdrive field. Source: NRL game manual, fig. 3.0.</p></div>
+    <div><ol class="hs-list"><li class="hs-item" data-hs-item data-k="1"><button type="button" aria-expanded="false"><span>01</span>High Pole</button><p>3 points for each CORE, four to a pole. Our scoring priority.</p></li><li class="hs-item" data-hs-item data-k="2"><button type="button" aria-expanded="false"><span>02</span>Drop Zone</button><p>1 point for each CORE. Held as the fallback when a pole is full or out of reach.</p></li><li class="hs-item" data-hs-item data-k="3"><button type="button" aria-expanded="false"><span>03</span>Space Station</button><p>Final 30 seconds: Balance for 15 points, or Dock for 8.</p></li><li class="hs-item" data-hs-item data-k="4"><button type="button" aria-expanded="false"><span>04</span>Source Zone</button><p>Where the Human Player feeds CORE into play.</p></li></ol>
+      <p class="mute" style="margin-top:1.5rem;max-width:44ch">Scoring priority is CORE on High Poles, with the Drop Zone held as a fallback. Star Poles score 5 for each CORE and an Apex Pole scores 9.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="phases"><div class="wrap cols">
+  <div class="c12 sec-head"><p class="tag">Plan by phase</p><h2 class="d2">Three phases</h2></div>
+  <ol class="phases c12">
+    <li><p class="mono mute">Phase 01</p><h3 class="d3">Autonomous</h3><p>Leave the box, follow the line, pick and drop CORE. The first junction is proven. The remainder is in test.</p></li>
+    <li><p class="mono mute">Phase 02</p><h3 class="d3">Driver control</h3><p>Cycle CORE to High Poles, and use the Cargo Bay to unlock Starburst early. It takes 10 CORE; Payload cuts that to 4.</p></li>
+    <li><p class="mono mute">Phase 03</p><h3 class="d3">Endgame</h3><p>Final 30 seconds: Balance on the Space Station for 15, or Dock for 8. An Apex Pole is 9 each.</p></li>
+  </ol>
+  <div class="c5" style="margin-top:3rem"><h3 class="d4" style="margin-bottom:1rem">Who does what</h3>
+    <ul class="list-rule">
+      <li><b>Driver</b><span>Only drives and scores.</span></li>
+      <li><b>Human Player</b><span>Feeds the Source Zone and presses Starburst.</span></li>
+      <li><b>Drive Strategist</b><span>Calls time at 1:00 and 2:00.</span></li>
+    </ul></div>
+  <div class="c6 s7" style="margin-top:3rem"><h3 class="d4" style="margin-bottom:1rem">If the match changes</h3>
+    <ul class="list-rule">
+      <li><b>Pole full or out of reach</b><span>Put CORE in the Drop Zone for 1 point, as a backup.</span></li>
+      <li><b>Opponent in our way</b><span>Drive around. Never make contact inside their perimeter (G4.8).</span></li>
+      <li><b>Under 30 s left</b><span>Go to the Space Station: Balance for 15 if Pixel can, otherwise Dock for 8.</span></li>
+      <li><b>Fault in autonomous</b><span>The robot stops and shows the fault name.</span></li>
+    </ul></div>
+</div></section>
+
+<section class="sec t-carbon" id="score"><div class="wrap cols">
+  <div class="c5 stack"><p class="tag">Our maths</p><h2 class="d2">Expected score</h2>
+    <p class="lede">A target of 40 to 50 points a match.</p>
+    <p><span class="st st-untested">Expected, not a result</span></p>
+    <p class="mute" style="max-width:40ch">This is our own arithmetic for a match that goes to plan. We have not played a match yet, so nothing here is a competition result.</p></div>
+  <div class="c6 s7">
+    <dl class="sum">
+      <div><dt>6 CORE on High Poles, 3 each</dt><dd>18</dd></div>
+      <div><dt>3 CORE on Star Poles, 5 each</dt><dd>15</dd></div>
+      <div><dt>Dock on the Space Station</dt><dd>8</dd></div>
+      <div class="total"><dt>Total. Balance instead of Dock adds 7.</dt><dd>41 to 48</dd></div>
+    </dl></div>
+</div></section>
+
+<section class="sec t-paper" id="autonomous"><div class="wrap cols">
+  <div class="c12 sec-head"><p class="tag">Autonomous Skill Challenge</p><h2 class="d2">The planned route</h2>
+    <p class="lede" style="max-width:52ch">Start in the right box, climb the right side, cross the top and finish in the left box. Nine stops: red P1 and P2 to D1, then gold P3 and P4 to D2.</p></div>
+  <div class="c6"><div data-route>
+      <div class="route">
+        <svg viewBox="80 55 870 780" role="img" aria-labelledby="route-t route-d">
+          <title id="route-t">Planned autonomous route</title>
+          <desc id="route-d">The robot starts in the right-hand box, climbs the right side of the track to collect two red CORE and drop them at D1, crosses the top to collect two gold CORE and drop them at D2, then runs down the left side and parks in the left-hand box. Nine stops. This is a plan and has not yet been tested on the robot.</desc>
+          <rect class="drop" x="390" y="355" width="250" height="250"/>
+          <path class="trk" d="M340 730H263V230H765V730H690 M390 230V103 M372 103h36 M640 230V103 M622 103h36 M765 355H890 M890 337v36 M765 605H890 M890 587v36 M263 355H138 M138 337v36 M263 605H138 M138 587v36 M515 230V355 M497 355h36 M765 480H640 M640 462v36 M263 480H390 M390 462v36"/>
+          <rect class="zone" x="340" y="668" width="123" height="124"/><rect class="zone" x="565" y="668" width="125" height="124"/>
+          <circle cx="390" cy="80" r="8.5" fill="none" stroke="#E0A21A" stroke-width="5"/><circle cx="640" cy="80" r="8.5" fill="none" stroke="#E0A21A" stroke-width="5"/><circle cx="913" cy="355" r="8.5" fill="none" stroke="#E5262E" stroke-width="5"/><circle cx="913" cy="605" r="8.5" fill="none" stroke="#E5262E" stroke-width="5"/><circle cx="115" cy="355" r="8.5" fill="none" stroke="#2F6BFF" stroke-width="5"/><circle cx="115" cy="605" r="8.5" fill="none" stroke="#2F6BFF" stroke-width="5"/>
+          <text class="lbl" x="412" y="190">P4</text><text class="lbl" x="662" y="190">P3</text><text class="lbl" x="800" y="382">P2</text><text class="lbl" x="800" y="632">P1</text>
+          <text class="lbl" x="185" y="382">P5</text><text class="lbl" x="185" y="632">P6</text><text class="lbl" x="470" y="300">D2</text><text class="lbl" x="690" y="508">D1</text><text class="lbl" x="310" y="508">D3</text>
+          <text class="lbl" x="472" y="585">Drop Zone</text><text x="352" y="820">PARK ZONE</text><text x="574" y="820">START ZONE</text>
+          <path class="path" d="M690 730H765V230H263V730H340"/>
+          <path class="path-live" d="M690 730H765V605H890H765V480H640H765V355H890H765V480H640H765V230H640V103V230H515V355V230H390V103V230H515V355V230H263V730H340"/>
+          <g class="stop" data-x="890" data-y="605" data-label="P1, pick up a red CORE"><circle cx="865" cy="577" r="13"/><text x="865" y="577">1</text></g><g class="stop" data-x="640" data-y="480" data-label="D1, drop"><circle cx="718" cy="452" r="13"/><text x="718" y="452">2</text></g><g class="stop" data-x="890" data-y="355" data-label="P2, pick up a red CORE"><circle cx="865" cy="327" r="13"/><text x="865" y="327">3</text></g><g class="stop" data-x="640" data-y="480" data-label="D1, drop"><circle cx="680" cy="452" r="13"/><text x="680" y="452">4</text></g><g class="stop" data-x="640" data-y="103" data-label="P3, pick up a gold CORE"><circle cx="612" cy="150" r="13"/><text x="612" y="150">5</text></g><g class="stop" data-x="515" data-y="355" data-label="D2, drop"><circle cx="543" cy="272" r="13"/><text x="543" y="272">6</text></g><g class="stop" data-x="390" data-y="103" data-label="P4, pick up a gold CORE"><circle cx="362" cy="150" r="13"/><text x="362" y="150">7</text></g><g class="stop" data-x="515" data-y="355" data-label="D2, drop"><circle cx="543" cy="312" r="13"/><text x="543" y="312">8</text></g><g class="stop" data-x="340" data-y="730" data-label="Park zone"><circle cx="400" cy="646" r="13"/><text x="400" y="646">9</text></g>
+          <circle class="bot" cx="690" cy="730" r="10"/>
+        </svg>
+      </div>
+      <div class="route-bar"><p class="mono" aria-live="polite"><span class="st st-untested">Plan only, not yet tested on the robot</span> &nbsp; <span data-route-step>Start zone</span></p><button type="button" data-replay>Replay the route</button></div>
+    </div></div>
+  <div class="c6">
+    <h3 class="d4" style="margin-bottom:1rem">Sequence, sensors and test status</h3>
+    <div class="tbl-scroll"><table class="tbl">
+      <thead><tr><th scope="col">Step</th><th scope="col">Action</th><th scope="col">Sensor or trigger</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+        <tr><td>01</td><td>Leave the black Start box</td><td>Middle sensors see line, outer sensors see white</td><td><span class="st st-untested">Not yet tested</span></td></tr>
+        <tr><td>02</td><td>Follow the line to P1, turn in, grip CORE</td><td>Junction: edge pair and middle pair dark; end bar</td><td><span class="st st-works">Works: 3–4 of 6–7</span></td></tr>
+        <tr><td>03</td><td>U-turn to D1 and release. Repeat P2 to D1, P3 to D2, P4 to D2</td><td>Gyro turn guard; route memory (markHere, retraceTo)</td><td><span class="st st-untested">Not yet tested</span></td></tr>
+        <tr><td>04</td><td>Check the clock, then follow the line to the left box and park</td><td>Time left below park reserve; all 8 sensors black for 150 ms</td><td><span class="st st-untested">Not yet tested</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="cap">Planned timings sit below the measured 0.61 m/s, leaving margin inside the 150 s period.</p>
+  </div>
+  <div class="c4" style="margin-top:2.5rem"><h3 class="d4" style="margin-bottom:1rem">Tuning order</h3>
+    <ol class="list-rule">
+      <li><b>1 Drive</b><span>Straight-line trim, left and right sides matched.</span></li>
+      <li><b>2 Control gains</b><span>PID steering, one variable at a time.</span></li>
+      <li><b>3 Junctions</b><span>Detection threshold and debounce.</span></li>
+      <li><b>4 Turns</b><span>Gyroscopic guard angles for quarter turns and reversals.</span></li>
+    </ol></div>
+  <div class="c4" style="margin-top:2.5rem"><h3 class="d4" style="margin-bottom:1rem">How we measure a run</h3>
+    <ul class="ticks">
+      <li>Each step is repeated 3 to 5 times. A step passes only when it repeats.</li>
+      <li>Telemetry is logged from the driver station: fault state, junction count, line error.</li>
+      <li>Open action: repeat the speed test across battery states of charge.</li>
+    </ul></div>
+  <div class="c4" style="margin-top:2.5rem"><h3 class="d4" style="margin-bottom:1rem">If something goes wrong</h3>
+    <ul class="ticks">
+      <li>Any latched fault, the emergency stop or a lost link cuts drive power.</li>
+      <li>A carry flag enforces single-CORE transport.</li>
+    </ul></div>
+</div></section>
+</main>
+<!-- Footer: keep this block identical on every page -->
+<footer class="foot"><div class="foot-row">
+  <p>Glitched // Team 190<br>National Public School, Bangalore<br>National Robotics League 2026, Hyperdrive</p>
+  <nav aria-label="Elsewhere"><a href="https://www.instagram.com/_glitch_d/" rel="noopener">Instagram @_glitch_d</a><a href="https://www.youtube.com/@Glitched_NRL-190" rel="noopener">YouTube @Glitched_NRL-190</a></nav>
+</div></footer>
+<script src="js/site.js"></script>
+</body>
+</html>

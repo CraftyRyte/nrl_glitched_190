@@ -1,161 +1,393 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>glitched | NRL Robotics Team</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@300;400;500&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/glitch.css">
-  <link rel="stylesheet" href="css/decor.css">
-  <link rel="stylesheet" href="css/intro.css">
-  <link rel="stylesheet" href="css/slides.css">
-  <link rel="stylesheet" href="css/bg.css">
-  <link rel="stylesheet" href="css/team.css">
-  <link rel="stylesheet" href="css/neon.css">
-  <link rel="stylesheet" href="css/fpattern.css">
-  <link rel="stylesheet" href="css/polish.css">
-  <link rel="icon" href="images/logo.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLITCHED // Team 190 | NRL 2026 Hyperdrive</title>
+<meta name="description" content="GLITCHED is Team 190 from National Public School, Bangalore: eight Grade 11 students and one robot, Pixel, built for National Robotics League 2026 Hyperdrive.">
+<meta name="theme-color" content="#0B0B0E">
+<link rel="canonical" href="https://nrlglitched190.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GLITCHED // Team 190">
+<meta property="og:title" content="GLITCHED // Team 190 | NRL 2026 Hyperdrive">
+<meta property="og:description" content="GLITCHED is Team 190 from National Public School, Bangalore: eight Grade 11 students and one robot, Pixel, built for National Robotics League 2026 Hyperdrive.">
+<meta property="og:url" content="https://nrlglitched190.vercel.app/">
+<meta property="og:image" content="https://nrlglitched190.vercel.app/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/logo.png">
+<link rel="preload" href="fonts/BigShouldersDisplay.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/InstrumentSans.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>(function(d){d.className="js";if(matchMedia("(min-width: 1001px) and (min-height: 640px)").matches&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("pin")})(document.documentElement)</script>
+<link rel="preload" as="image" href="images/pixel.webp" imagesrcset="images/pixel-900.webp 900w, images/pixel.webp 1536w" imagesizes="(max-width:1000px) 118vw, 86vw">
 </head>
 <body>
-  <canvas id="bg" aria-hidden="true"></canvas>
-  <div id="intro" aria-hidden="true">
-    <div class="shutter top"></div>
-    <div class="shutter bottom"></div>
-    <div class="gate" id="gate">
-      <span class="gate-glow"></span>
-      <span class="gate-line"></span>
-      <i class="gc tl"></i><i class="gc tr"></i><i class="gc bl"></i><i class="gc br"></i>
-      <div class="gate-main">
-        <h1 class="glitch gate-title" data-text="glitched">glitched</h1>
-        <p class="gate-sub"><span id="gateSub"></span><span class="gate-caret">_</span></p>
-        <button class="gate-enter" id="gateEnter" type="button"><span class="gate-colon">:</span>click enter</button>
-      </div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<!-- Navigation: keep this block identical on every page -->
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="GLITCHED, Team 190. Home"><img src="images/logo.png" alt="" width="653" height="468"><span>Glitched <i>// Team 190</i></span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav-links" id="nav-links" aria-label="Main"><a href="robot.html">The robot</a><a href="engineering.html">Engineering</a><a href="build-log.html">Build log</a><a href="team.html">Team</a><a href="strategy.html">Strategy</a></nav>
+</header>
+<nav class="rail" aria-label="Chapters"></nav>
+<main id="main">
+
+<!-- 01 THE SIGNAL -->
+<section class="hero" id="signal" data-ch="01" data-title="The signal" data-p="exit">
+  <div class="hero-meta mono"><span>Team 190 / NRL 2026 / Hyperdrive</span><span>National Public School, Bangalore</span></div>
+  <p class="hero-word" data-text="Glitched" aria-hidden="true">Glitched</p>
+  <div class="hero-robot"><img src="images/pixel.webp" srcset="images/pixel-900.webp 900w, images/pixel.webp 1536w" sizes="(max-width:1000px) 118vw, 86vw" alt="Pixel, the team's robot: four off-road tyres under clear acrylic plates, with a servo arm and gripper at the front" width="1536" height="1024" fetchpriority="high"></div>
+  <div class="hero-floor"></div>
+  <div class="hero-copy">
+    <div>
+      <h1><span>We don't follow</span><span>the code.</span><span>We rewrite it.</span></h1>
+      <p class="hero-sub">Eight Grade 11 students. One machine. An engineering journey built on experimentation, iteration and code.</p>
     </div>
-    <div class="intro-core">
-      <canvas id="introCanvas"></canvas>
-      <div class="intro-hud"><span id="introLabel">01 / IGNITION</span><span id="introTime">0.0s</span></div>
-      <div class="intro-final">
-        <img class="intro-mark" src="images/logo.png" alt="">
-        <h1 class="glitch intro-logo" data-text="glitched">glitched</h1>
-      </div>
-      <div class="intro-bar"><span id="introFill"></span></div>
-      <p class="intro-hint">click or press any key to skip</p>
+    <a class="scroll-cue" href="#about">Scroll</a>
+  </div>
+</section>
+
+<!-- 02 EIGHT MINDS. ONE MACHINE. -->
+<section class="ch minds" id="about" data-ch="02" data-title="Eight minds">
+  <div class="wrap grid">
+    <figure class="minds-photo" data-p><div class="frame"><img src="images/team.webp" alt="The eight members of GLITCHED in white masks and dark formal wear, seated together under red and blue light" width="800" height="592" loading="lazy" decoding="async"></div></figure>
+    <h2 class="d1 minds-title" data-lines><span>Eight minds.</span><span>One machine.</span></h2>
+    <div class="minds-copy stack">
+      <p class="tag">02 <b>/ Who we are</b></p>
+      <p class="lede">Nobody knows who is behind GLITCHED until the robot speaks.</p>
+      <div class="body mute"><p>White masks and formal wear, in every video and every photograph. The identities stay anonymous so the engineering does the talking. Behind the masks, each of us owns a named engineering or operations area.</p></div>
+      <p><a class="link" href="team.html">Meet the eight</a></p>
+    </div>
+    <div class="minds-facts">
+      <div><p class="num">8</p><p class="mono">Operatives, one masked identity</p></div>
+      <div><p class="num">11</p><p class="mono">Grade, National Public School, Bangalore</p></div>
+      <div><p class="num">190</p><p class="mono">Team number, NRL 2026 Hyperdrive</p></div>
     </div>
   </div>
-  <header class="nav">
-    <a class="brand" href="index.html#top"><img src="images/logo.png" alt=""><span class="logo glitch" data-text="glitched">glitched</span></a>
-    <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav">
-      <a href="#about">About NRL</a>
-      <a href="#challenge">Challenge</a>
-      <a href="#build">Our build</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+</section>
 
-  <main id="top">
-    <section class="hero slide">
-      <div class="hero-text">
-      <h1 class="glitch big" data-text="glitched">glitched</h1>
-      <p class="boot"><span id="typed"></span><span class="cursor">_</span></p>
-      <p class="sub">Eight Grade 11 students from National Public School, Bangalore, building an autonomous automobile robot for the National Robotics League, almost entirely through code.</p>
-      <div class="system-readout" aria-label="Team and project status">
-        <span><i></i> SYSTEM ONLINE</span><span>HYPERDRIVE 2026</span><span>TEAM 190</span><span>TEAM SIZE: 08</span><span id="countdown"></span>
-      </div>
-      <a class="btn" href="#team">Meet the team</a>
-      </div>
-      <div class="logo-hud"><span class="glow"></span><img src="images/logo.png" alt="glitched logo"><span class="hud-tag">GLITCHED // NRL TEAM</span></div>
-      <div class="scroll-hint">scroll</div>
-    </section>
-    <div class="marquee" aria-hidden="true"><div class="mq-track"><span>SENSE</span><i>✦</i><span>DECIDE</span><i>✦</i><span>DRIVE</span><i>✦</i><span>REPEAT</span><i>✦</i><span>NRL</span><i>✦</i><span>EIGHT MINDS</span><i>✦</i><span>ONE ROBOT</span><i>✦</i><span>SENSE</span><i>✦</i><span>DECIDE</span><i>✦</i><span>DRIVE</span><i>✦</i><span>REPEAT</span><i>✦</i><span>NRL</span><i>✦</i><span>EIGHT MINDS</span><i>✦</i><span>ONE ROBOT</span><i>✦</i></div></div>
-
-
-    <section id="about" class="wrap slide">
-      <p class="eyebrow">01 // about</p>
-      <h2>About NRL</h2>
-      <p class="lead">Students <strong>design, build and battle</strong> robots in a high-energy arena. What is really being built <strong>runs deeper</strong>.</p>
-      <ul class="points">
-        <li><span class="num">01</span><h3>Compete fast</h3><p>Matches, skill challenges and team presentations put every decision under pressure.</p></li>
-        <li><span class="num">02</span><h3>Think on your feet</h3><p>You learn to lead, adapt and improvise the moment the plan breaks.</p></li>
-        <li><span class="num">03</span><h3>Science meets story</h3><p>Curiosity becomes capability, and bold ideas become something you can demonstrate.</p></li>
+<!-- 03 THE CHALLENGE -->
+<section class="ch t-paper" id="challenge" data-ch="03" data-title="The challenge">
+  <div class="wrap cols">
+    <header class="c7 stack">
+      <p class="tag">03 <b>/ National Robotics League 2026</b></p>
+      <h2 class="d1" data-lines><span>The</span><span>challenge</span></h2>
+      <p class="lede">This season's game is Hyperdrive. Robots score rings called CORE, first entirely on their own and then with a driver at the controls.</p>
+    </header>
+    <div class="c5 stack" style="align-self:end;--gap:1rem">
+      <h3 class="d4">What we set out to do</h3>
+      <ul class="ticks">
+        <li>Start from the NRL kit.</li>
+        <li>Score CORE on our own in the Autonomous Skill Challenge.</li>
+        <li>Give the driver one-button aids for the driver-controlled period.</li>
+        <li>Stay inside the rules: an 8 kg limit, one battery pack, and motors that may not be modified (R5.3).</li>
       </ul>
-
-      <h2 class="h-sub">About Glitched</h2>
-      <p class="lead sm">Eight Grade 11 students, one <strong>code-driven automobile robot</strong> named Pixel, and a pilot at the controls.</p>
-      <div class="stats">
-        <div><b>8</b><span>members</span></div>
-        <div><b>1</b><span>robot, run by code</span></div>
-        <div><b>4</b><span>drive motors</span></div>
-        <div><b>8</b><span>build sessions</span></div>
+    </div>
+    <div class="c7" data-rise>
+      <div class="score">
+        <div><p class="num">3</p><p>High Pole<span>per CORE, four to a pole</span></p></div>
+        <div><p class="num">5</p><p>Star Pole<span>per CORE</span></p></div>
+        <div><p class="num">9</p><p>Apex Pole<span>each</span></p></div>
+        <div><p class="num">1</p><p>Drop Zone<span>per CORE, the fallback</span></p></div>
+        <div><p class="num">15</p><p>Balance<span>on the Space Station, final 30 s</span></p></div>
+        <div><p class="num">8</p><p>Dock<span>on the Space Station, final 30 s</span></p></div>
       </div>
-      <ul class="roles">
-        <li><strong>Chief Executive Officer</strong> team lead, autonomous code, judge presentation</li>
-        <li><strong>Chief Technology Officer</strong> robot design and assembly</li>
-        <li><strong>Chief Operating Officer</strong> planning, deadlines, notebook</li>
-        <li><strong>Chief Marketing Officer</strong> marketing, branding, notebook drafts</li>
-        <li><strong>Managing Director</strong> season plan and milestones</li>
-        <li><strong>Director of Photography</strong> photo, video and social content</li>
-        <li><strong>Editor-in-Chief</strong> notebook, member posts, Human Player</li>
-        <li><strong>Chief Pilot (Driver)</strong> driving, strategy, team website</li>
-      </ul>
-      <p class="closer">In a world of noise, glitch the system.</p>
-    </section>
+      <p class="cap">Point values as recorded in our engineering portfolio. The NRL game manual is the authority.</p>
+      <p style="margin-top:1.6rem"><a class="link" href="strategy.html">How we plan to play it</a></p>
+    </div>
+    <figure class="c5 fig" data-wipe>
+      <div class="field"><img src="images/field.webp" alt="Top view of the Hyperdrive field with red and blue start zones, drop zones, space stations, vaults, a source zone, and rows of high poles and star poles" width="915" height="918" loading="lazy" decoding="async"></div>
+      <figcaption class="cap">The Hyperdrive field. Source: NRL game manual, fig. 3.0.</figcaption>
+    </figure>
+  </div>
+</section>
 
-    <section id="challenge" class="wrap slide">
-      <p class="eyebrow">02 // challenge</p>
-      <h2>The challenge</h2>
-      <p>Every team starts from the <strong>same NRL kit</strong>. We engineered upgrades on top of it, and what the vehicle does is <strong>decided by the code</strong>. All 8 members contribute: writing the code, piloting, marketing, filming, editing, strategy and team management.</p>
-      <ol class="steps">
-        <li><h3>Start from the kit</h3><p>A chassis with a servo arm and gripper, controlled manually. The same starting point for every team.</p></li>
-        <li><h3>Upgrade and code it</h3><p>Four geared 12 V motors, an 8-channel line array and an inertial sensor, driven by our own C++ firmware on the ESP32-S3 Hub.</p></li>
-        <li><h3>Compete</h3><p>Fast-paced matches, skill challenges, and a team presentation to the judges.</p></li>
+<!-- 04 THE STARTING POINT -->
+<section class="ch" id="kit" data-ch="04" data-title="The starting point">
+  <div class="wrap cols">
+    <figure class="c5 fig" data-wipe>
+      <div class="frame" style="aspect-ratio:4/5"><img src="images/arm-gripper.webp" alt="Close view of the clear acrylic arm on its standoffs, with the blue arm servo behind it" width="1400" height="921" loading="lazy" decoding="async"></div>
+      <figcaption class="cap">The arm and gripper, as built on Pixel.</figcaption>
+    </figure>
+    <div class="c7 stack" style="--gap:1.8rem">
+      <p class="tag">04 <b>/ The NRL kit</b></p>
+      <h2 class="d2" data-lines><span>The starting</span><span>point</span></h2>
+      <p class="lede">The kit is a drivable chassis with a servo arm and a gripper, under manual control only. It could be driven. It could not find its own way.</p>
+      <ol class="ledger">
+        <li><i>01</i><h3 class="d3">No line sensing</h3><p>With no way to see the line, there is no autonomous driving. <span class="st st-works" style="margin-left:.4rem">Addressed at P2</span></p></li>
+        <li><i>02</i><h3 class="d3">No measured distance</h3><p>The kit motors have no encoders, and rule R5.3 forbids modifying them. <span class="st st-planned" style="margin-left:.4rem">Planned for P3</span></p></li>
+        <li><i>03</i><h3 class="d3">Limited grip</h3><p>The kit wheels lacked grip. <span class="st st-works" style="margin-left:.4rem">New wheels fitted</span></p></li>
+        <li><i>04</i><h3 class="d3">Manual control only</h3><p>Every move came from the driver's sticks. <span class="st st-dev" style="margin-left:.4rem">Autonomy in progress</span></p></li>
       </ol>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="build" class="wrap slide">
-      <p class="eyebrow">03 // build</p>
-      <h2>Our build</h2>
-      <p><strong>Pixel</strong> started as the NRL kit. We added four geared 12 V motors with higher-grip wheels, an 8-channel infrared line array, an inertial sensor and the HEXA Command Hub (ESP32-S3) running our own C++ firmware. It measures 42 × 40.5 × 24 cm and weighs about 2.5 kg.</p>
-      <div class="terminal">
-        <div class="tbar"><i></i><i></i><i></i><span>build_log</span></div>
-        <p><span class="dim">$</span> show recent fixes</p>
-        <p class="err">ERROR: Hub did not detect the line sensor</p>
-        <p class="ok">FIXED: reflashed the Hub</p>
-        <p class="err">ERROR: motors ran reversed</p>
-        <p class="ok">FIXED: inverted the left side in firmware</p>
-        <p class="err">ERROR: inertial sensor over-read distance by about 1.6x</p>
-        <p class="ok">FIXED: distances from taped references, sensor used for turns only</p>
+<!-- 05 ENGINEERING THE DIFFERENCE: stacked on small screens, pinned on desktop -->
+<section class="ch proto" id="build" data-ch="05" data-title="Engineering the difference" data-pin>
+  <div class="proto-in">
+    <div>
+      <div class="proto-head">
+        <div class="stack" style="--gap:1rem"><p class="tag">05 <b>/ Three prototypes</b></p><h2 class="d2">Engineering the difference</h2></div>
+        <p class="mono mute" style="max-width:34ch">Each stage is one chain: objective, problem, alternatives, decision, result. A dashed outline means planned, not built.</p>
       </div>
-      <a class="btn back" href="build-log.html">Read the full build log</a>
-    </section>
+      <ol class="proto-rail">
+        <li class="is-on">Stage 1<b>P1 Manual kit</b></li>
+        <li>Stage 2<b>P2 Line following</b></li>
+        <li class="is-planned">Stage 3<b>P3 Encoders</b></li>
+        <li class="is-planned">Target<b>Full mission</b></li>
+      </ol>
+    </div>
+    <div class="proto-stages">
+      <article class="proto-stage is-on">
+        <p class="num proto-id" aria-hidden="true">P1</p>
+        <div class="proto-title"><h3 class="d3">The starting kit</h3><ul class="proto-config"><li>Original chassis</li><li>Arm and gripper</li><li>Manual control</li><li>No line sensor</li></ul></div>
+        <div class="proto-figs">
+          <figure><div class="frame"><img src="images/motor-mount.webp" alt="A geared drive motor held to the acrylic base plate by a black 3D-printed clamp, with its shaft running into a wheel hub" width="804" height="568" loading="lazy" decoding="async"></div><figcaption class="cap">Motor mount and wheel hub, during the build.</figcaption></figure>
+        </div>
+        <dl class="proto-chain"><div><dt>Objective</dt><dd>Drive and score by controller: tank drive and a servo arm.</dd></div><div><dt>Problem</dt><dd>No line detection, so no autonomy. No encoders, so no measured distance. The kit wheels lacked grip, and a motor can twist in its mount under load.</dd></div><div><dt>Alternatives</dt><dd>300 RPM motors (about 300 N-cm stall torque in seller listings) or 600 RPM (about 122 N-cm). A 180° rotating arm or a fixed-plane arm.</dd></div><div><dt>Decision</dt><dd>Kept 300 RPM: at 2.5 kg, traction limits pushing, not torque. Fitted higher-grip wheels and bolted 3D-printed motor clamps. Kept the arm in a fixed plane, sweeping 90°.</dd></div><div><dt>Result</dt><dd>Simple and easy to assemble. Driver-controlled pick-up works. About 1.57 m/s at full power, calculated from 300 RPM and 10 cm wheels.</dd></div></dl>
+      </article>
+      <article class="proto-stage">
+        <p class="num proto-id" aria-hidden="true">P2</p>
+        <div class="proto-title"><h3 class="d3">Line following</h3><ul class="proto-config"><li>8-channel infrared array</li><li>Inertial measurement unit</li><li>PID line following</li><li>Junction detection</li><li>About 0.61 m/s, measured</li></ul></div>
+        <div class="proto-figs">
+          <figure><div class="frame wide"><img src="images/ir-array.webp" alt="The curved white circuit board of the infrared line array, with eight sensors along its edge" width="1120" height="280" loading="lazy" decoding="async"></div><figcaption class="cap">Our 8-sensor infrared line array.</figcaption></figure>
+          <figure><div class="frame"><img src="images/test-arena.webp" alt="A room with a black tape track laid out on a white tile floor" width="1280" height="470" loading="lazy" decoding="async"></div><figcaption class="cap">Test arena: tape on a tile floor.</figcaption></figure>
+        </div>
+        <dl class="proto-chain"><div><dt>Objective</dt><dd>Run the line to each junction on our own, and know our real speed.</dd></div><div><dt>Problem</dt><dd>The Hub did not detect the line sensor. On new tape the robot stayed centred only after recalibrating. The inertial unit read distance about 1.6× too far.</dd></div><div><dt>Alternatives</dt><dd>For distance: the inertial unit, tape-measured references, or encoders.</dd></div><div><dt>Decision</dt><dd>Reflashed the HEXA Command Hub. Recalibrate at every venue. Take distance from tape for now, and use the inertial unit only for turns, behind a gyro guard.</dd></div><div><dt>Result</dt><dd>1.88 m in 3 s and 3.11 m in 5 s, about 0.61 m/s. Stops at the right junction in 3 to 4 of 6 to 7 runs.</dd></div></dl>
+      </article>
+      <article class="proto-stage" data-planned>
+        <p class="num proto-id" aria-hidden="true">P3</p>
+        <div class="proto-title"><h3 class="d3">The next step</h3><p style="margin-bottom:1rem"><span class="st st-planned">Planned. Not fitted, not tested.</span></p><ul class="proto-config"><li>OE-28 encoders</li><li>Distance from wheel counts</li><li>Full autonomous mission code</li></ul></div>
+        <div class="proto-figs">
+          <figure><div class="frame"><img src="images/encoder.webp" alt="A small round green encoder circuit board lying beside its opened black housing" width="780" height="400" loading="lazy" decoding="async"></div><figcaption class="cap">An encoder, opened up. Ordered, not yet fitted.</figcaption></figure>
+        </div>
+        <dl class="proto-chain"><div><dt>Objective</dt><dd>Measure distance from the wheels, then run the whole pick-and-drop mission.</dd></div><div><dt>Problem</dt><dd>The kit motors have no encoder, and rule R5.3 forbids modifying motors.</dd></div><div><dt>Alternatives</dt><dd>Keep taped references as the fallback, or move entirely to encoder counts.</dd></div><div><dt>Decision</dt><dd>Asked the organisers, then ordered motors and OE-28 encoders. They plug into the motor driver board, clear of the multiplexer pins. Counts per metre will be calibrated on a measured run.</dd></div><div><dt>Result</dt><dd>Nothing to report yet. Taped references stay in the program until the encoder route is proven.</dd></div></dl>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section id="team" class="wrap slide">
-      <p class="eyebrow">04 // team</p>
-      <h2>Meet the team</h2>
-      <div id="mentor"></div>
-      <div id="members" class="strips"></div>
-    </section>
-  </main>
+<!-- 06 MEET PIXEL -->
+<section class="ch pixel" id="pixel" data-ch="06" data-title="Meet Pixel">
+  <div class="wrap">
+    <header class="cols">
+      <div class="c7 stack"><p class="tag">06 <b>/ The robot</b></p><h2 class="d1" data-lines><span>Meet Pixel</span></h2></div>
+      <p class="c5 lede" style="align-self:end">A 2.5 kg differential-drive robot. Four geared 12 V motors, two per side, turn 10 cm wheels. Two digital servos work the arm and the gripper for the CORE ring.</p>
+    </header>
+    <div class="hs" data-hs>
+      <div class="hs-stage"><img src="images/pixel.webp" srcset="images/pixel-900.webp 900w, images/pixel.webp 1536w" sizes="(max-width:1000px) 92vw, 58vw" alt="Pixel seen from the front left: four off-road tyres, clear acrylic plates, a blue servo and the arm above them" width="1536" height="1024" loading="lazy" decoding="async"><button class="hs-dot" type="button" style="--x:73%;--y:7%" data-k="1" aria-pressed="false" aria-label="Servo arm">1</button><button class="hs-dot" type="button" style="--x:90.5%;--y:30%" data-k="2" aria-pressed="false" aria-label="Gripper">2</button><button class="hs-dot" type="button" style="--x:72%;--y:21%" data-k="3" aria-pressed="false" aria-label="Digital servos">3</button><button class="hs-dot" type="button" style="--x:31%;--y:34%" data-k="4" aria-pressed="false" aria-label="HEXA Command Hub">4</button><button class="hs-dot" type="button" style="--x:23%;--y:71%" data-k="5" aria-pressed="false" aria-label="Drive wheels and motors">5</button><button class="hs-dot" type="button" style="--x:47.5%;--y:67%" data-k="6" aria-pressed="false" aria-label="Motor clamps">6</button><button class="hs-dot" type="button" style="--x:19%;--y:27.5%" data-k="7" aria-pressed="false" aria-label="Plate chassis">7</button></div>
+      <ol class="hs-list"><li class="hs-item" data-hs-item data-k="1"><button type="button" aria-expanded="false"><span>01</span>Servo arm</button><p>A fixed-plane arm that sweeps a 90° envelope, from stowed to scoring height. The driver sets its angle with the right stick.</p></li><li class="hs-item" data-hs-item data-k="2"><button type="button" aria-expanded="false"><span>02</span>Gripper</button><p>Toggles between two commanded positions, open and clamped. Its profile is cut around the 95 mm CORE ring.</p></li><li class="hs-item" data-hs-item data-k="3"><button type="button" aria-expanded="false"><span>03</span>Digital servos</button><p>Two digital servos, a Robokits RKI-1248 (20 kg·cm) and a Robotics Dynamix RDS-3225, driven directly by the Hub.</p></li><li class="hs-item" data-hs-item data-k="4"><button type="button" aria-expanded="false"><span>04</span>HEXA Command Hub</button><p>An ESP32-S3 controller. It runs our C++ firmware and the link to the driver station.</p></li><li class="hs-item" data-hs-item data-k="5"><button type="button" aria-expanded="false"><span>05</span>Drive wheels and motors</button><p>Four Johnson geared motors, 12 V and 300 RPM, two per side, turn 10 cm higher-grip wheels on set-screw hubs.</p></li><li class="hs-item" data-hs-item data-k="6"><button type="button" aria-expanded="false"><span>06</span>Motor clamps</button><p>Bolted 3D-printed clamps pass the drive torque into the base plate, so a motor cannot twist in its mount under load.</p></li><li class="hs-item" data-hs-item data-k="7"><button type="button" aria-expanded="false"><span>07</span>Plate chassis</button><p>3 mm laser-cut acrylic plates on aluminium standoffs keep the frame light and the centre of mass low.</p></li></ol>
+    </div>
+    <div style="margin-top:clamp(2.5rem,6vh,4rem)" data-rise><dl class="spec">
+      <div><dt>Weight</dt><dd>About 2.5 kg<small>The limit is 8 kg</small></dd></div>
+      <div><dt>Size</dt><dd>42 × 40.5 × 24 cm</dd></div>
+      <div><dt>Drive</dt><dd>Differential, tank<small>Two sides commanded independently</small></dd></div>
+      <div><dt>Motors</dt><dd>4 × 12 V, 300 RPM<small>Johnson geared, two per side</small></dd></div>
+      <div><dt>Wheels</dt><dd>10 cm<small>Higher-grip tyres on set-screw hubs</small></dd></div>
+      <div><dt>Controller</dt><dd>HEXA Command Hub<small>ESP32-S3</small></dd></div>
+      <div><dt>Actuation</dt><dd>2 digital servos<small>Arm and gripper</small></dd></div>
+      <div><dt>Sensors</dt><dd>8-channel IR array<small>Plus an LSM6DSOX inertial unit</small></dd></div>
+      <div><dt>Speed</dt><dd>0.61 m/s measured<small>On the line. 1.57 m/s is the calculated full-power figure.</small></dd></div>
+    </dl></div>
+    <p style="margin-top:2rem"><a class="link" href="robot.html">Pixel in full</a></p>
+  </div>
+</section>
 
-  <footer id="contact" class="slide">
-    <div class="logo-hud small"><span class="glow"></span><img src="images/logo.png" alt="glitched logo"></div>
-    <h2 class="glitch" data-text="glitched">glitched</h2>
-    <p class="contact-line"><a id="contact-address" href="mailto:home.smart010203@gmail.com">home.smart010203@gmail.com</a><button class="copy-email" type="button" data-copy="home.smart010203@gmail.com" aria-label="Copy email address">COPY</button><span aria-hidden="true">&nbsp;|&nbsp;</span><a href="https://www.instagram.com/_glitch_d/" target="_blank" rel="noopener">Instagram @_glitch_d</a><span aria-hidden="true">&nbsp;|&nbsp;</span><a href="https://www.youtube.com/@Glitched_NRL-190" target="_blank" rel="noopener">YouTube @Glitched_NRL-190</a></p>
-    <p class="dim">Team 190 · NRL 2026 HYPERDRIVE · National Public School, Bangalore</p>
-  </footer>
+<!-- 07 UNDER THE HOOD: three panels, side by side on desktop -->
+<section class="ch hood" id="hood" data-ch="07" data-title="Under the hood" data-pin="3">
+  <div class="hood-in">
+    <div class="hood-head">
+      <div class="stack" style="--gap:1rem"><p class="tag">07 <b>/ How it works</b></p><h2 class="d2">Under the hood</h2></div>
+      <ol class="hood-count"><li>Mechanical</li><li>Electrical</li><li>Software</li></ol>
+    </div>
+    <div class="hood-track">
+      <article class="hood-panel hood-mech">
+        <header><h3 class="d3">Mechanical</h3><p>Clear plates, a low centre of mass, and mounts that do not move.</p><a class="link" href="engineering.html#mechanical">Mechanical in full</a></header>
+        <div class="hood-media">
+          <figure><div class="frame"><img src="images/arm-gripper.webp" alt="The acrylic arm and gripper mechanism on its aluminium standoffs" width="1400" height="921" loading="lazy" decoding="async"></div><figcaption class="cap">Arm and gripper.</figcaption></figure>
+          <figure><div class="frame"><img src="images/motor-mount.webp" alt="A drive motor clamped to the base plate beside its wheel hub" width="804" height="568" loading="lazy" decoding="async"></div><figcaption class="cap">Motor mount and wheel hub.</figcaption></figure>
+        </div>
+        <ul class="hood-facts">
+          <li><b>Structure</b>3 mm laser-cut acrylic plates on aluminium standoffs</li>
+          <li><b>Drivetrain</b>6 mm output shafts into set-screw wheel hubs</li>
+          <li><b>Mounting</b>Bolted 3D-printed clamps stop the motors twisting</li>
+          <li><b>Arm and gripper</b>Fixed plane, 90° sweep, two-position gripper</li>
+        </ul>
+      </article>
+      <article class="hood-panel hood-elec t-carbon">
+        <header><h3 class="d3">Electrical</h3><p>One 12 V pack, one main switch, one wireless link.</p><a class="link" href="engineering.html#electrical">Electrical in full</a></header>
+        <div class="hood-media">
+          <button class="zoom" type="button" data-zoom="images/wiring.webp" data-caption="Official NRL Hyperdrive control system, as wired on Pixel"><img src="images/wiring.webp" alt="Wiring diagram: the battery and power switch feed the HEXA Command Hub, which connects to four servos and to a motor driver that runs four DC motors" width="1723" height="913" loading="lazy" decoding="async"><span class="zoom-hint">Inspect the diagram</span></button>
+          <p class="cap">The official NRL Hyperdrive control system, as wired on Pixel.</p>
+        </div>
+        <ul class="hood-facts">
+          <li><b>Power</b>12 V lithium-ion pack, 18650 cells, 2200 mAh</li>
+          <li><b>Hub to driver</b>6-pin JST-SH link to a separate motor driver</li>
+          <li><b>Line array</b>8 channels through an 8-to-1 multiplexer</li>
+          <li><b>Inertial unit</b>LSM6DSOX over I2C</li>
+          <li><b>Wireless</b>ESP-NOW to the driver station, our only link</li>
+        </ul>
+      </article>
+      <article class="hood-panel hood-soft">
+        <header><h3 class="d3">Software</h3><p>Our own C++ firmware. Line following to a junction works today. The pick-and-drop steps are planned.</p><a class="link" href="engineering.html#software">Software in full</a></header>
+        <div class="hood-media">
+          <ol class="flow" aria-label="Autonomous program, step by step">
+      <li>Select AUTO OpMode</li>
+      <li>INIT: motors, servos, line array. No movement.</li>
+      <li>Auto start: clear fault, counts, route</li>
+      <li class="is-planned">Leave Start box<small>Planned, not yet tested</small></li>
+      <li class="is-works">Follow line to junction<small>Works today</small></li>
+      <li>Time left above park reserve?</li>
+      <li class="is-planned">Yes: pick up, U-turn, drop, repeat.<br>No: follow line to Park box, stop.<small>Planned, not yet tested</small></li>
+      <li class="is-stop">Any fault, emergency stop (RB) or lost link: motors stop</li>
+    </ol>
+          <ul class="stack-list">
+            <li>Language <span>C++17</span></li><li>Framework <span>Arduino, ESP32-S3</span></li><li>Tooling <span>PlatformIO</span></li><li>Kit <span>NRL SDK v1.5.0</span></li>
+            <li>Steering <span>PID on weighted line error</span></li><li>Junctions <span>Edge pair + centre pair</span></li><li>Turns <span>Gyroscopic guard</span></li><li>Faults <span>Latch, cut drive, name it</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-  <script src="js/fx.js"></script>
-  <script src="js/bg.js"></script>
-  <script src="js/ambient.js"></script>
-  <script src="js/intro.js"></script>
-  <script src="js/team.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/circuit.js"></script>
-  <script src="js/polish.js"></script>
+<!-- 08 MAKING IT AUTONOMOUS -->
+<section class="ch t-paper" id="autonomous" data-ch="08" data-title="Making it autonomous">
+  <div class="wrap cols">
+    <header class="c12 stack" style="margin-bottom:clamp(1.5rem,4vh,3rem)">
+      <p class="tag">08 <b>/ Autonomous Skill Challenge</b></p><h2 class="d1" data-lines><span>Making it</span><span>autonomous</span></h2>
+      <p class="lede" style="max-width:46ch">The plan is nine stops: two red CORE to D1, two gold CORE to D2, then park on the left. One part of it works today. We say which.</p>
+    </header>
+    <div class="c6"><div data-route>
+      <div class="route">
+        <svg viewBox="80 55 870 780" role="img" aria-labelledby="route-t route-d">
+          <title id="route-t">Planned autonomous route</title>
+          <desc id="route-d">The robot starts in the right-hand box, climbs the right side of the track to collect two red CORE and drop them at D1, crosses the top to collect two gold CORE and drop them at D2, then runs down the left side and parks in the left-hand box. Nine stops. This is a plan and has not yet been tested on the robot.</desc>
+          <rect class="drop" x="390" y="355" width="250" height="250"/>
+          <path class="trk" d="M340 730H263V230H765V730H690 M390 230V103 M372 103h36 M640 230V103 M622 103h36 M765 355H890 M890 337v36 M765 605H890 M890 587v36 M263 355H138 M138 337v36 M263 605H138 M138 587v36 M515 230V355 M497 355h36 M765 480H640 M640 462v36 M263 480H390 M390 462v36"/>
+          <rect class="zone" x="340" y="668" width="123" height="124"/><rect class="zone" x="565" y="668" width="125" height="124"/>
+          <circle cx="390" cy="80" r="8.5" fill="none" stroke="#E0A21A" stroke-width="5"/><circle cx="640" cy="80" r="8.5" fill="none" stroke="#E0A21A" stroke-width="5"/><circle cx="913" cy="355" r="8.5" fill="none" stroke="#E5262E" stroke-width="5"/><circle cx="913" cy="605" r="8.5" fill="none" stroke="#E5262E" stroke-width="5"/><circle cx="115" cy="355" r="8.5" fill="none" stroke="#2F6BFF" stroke-width="5"/><circle cx="115" cy="605" r="8.5" fill="none" stroke="#2F6BFF" stroke-width="5"/>
+          <text class="lbl" x="412" y="190">P4</text><text class="lbl" x="662" y="190">P3</text><text class="lbl" x="800" y="382">P2</text><text class="lbl" x="800" y="632">P1</text>
+          <text class="lbl" x="185" y="382">P5</text><text class="lbl" x="185" y="632">P6</text><text class="lbl" x="470" y="300">D2</text><text class="lbl" x="690" y="508">D1</text><text class="lbl" x="310" y="508">D3</text>
+          <text class="lbl" x="472" y="585">Drop Zone</text><text x="352" y="820">PARK ZONE</text><text x="574" y="820">START ZONE</text>
+          <path class="path" d="M690 730H765V230H263V730H340"/>
+          <path class="path-live" d="M690 730H765V605H890H765V480H640H765V355H890H765V480H640H765V230H640V103V230H515V355V230H390V103V230H515V355V230H263V730H340"/>
+          <g class="stop" data-x="890" data-y="605" data-label="P1, pick up a red CORE"><circle cx="865" cy="577" r="13"/><text x="865" y="577">1</text></g><g class="stop" data-x="640" data-y="480" data-label="D1, drop"><circle cx="718" cy="452" r="13"/><text x="718" y="452">2</text></g><g class="stop" data-x="890" data-y="355" data-label="P2, pick up a red CORE"><circle cx="865" cy="327" r="13"/><text x="865" y="327">3</text></g><g class="stop" data-x="640" data-y="480" data-label="D1, drop"><circle cx="680" cy="452" r="13"/><text x="680" y="452">4</text></g><g class="stop" data-x="640" data-y="103" data-label="P3, pick up a gold CORE"><circle cx="612" cy="150" r="13"/><text x="612" y="150">5</text></g><g class="stop" data-x="515" data-y="355" data-label="D2, drop"><circle cx="543" cy="272" r="13"/><text x="543" y="272">6</text></g><g class="stop" data-x="390" data-y="103" data-label="P4, pick up a gold CORE"><circle cx="362" cy="150" r="13"/><text x="362" y="150">7</text></g><g class="stop" data-x="515" data-y="355" data-label="D2, drop"><circle cx="543" cy="312" r="13"/><text x="543" y="312">8</text></g><g class="stop" data-x="340" data-y="730" data-label="Park zone"><circle cx="400" cy="646" r="13"/><text x="400" y="646">9</text></g>
+          <circle class="bot" cx="690" cy="730" r="10"/>
+        </svg>
+      </div>
+      <div class="route-bar"><p class="mono" aria-live="polite"><span class="st st-untested">Plan only, not yet tested on the robot</span> &nbsp; <span data-route-step>Start zone</span></p><button type="button" data-replay>Replay the route</button></div>
+    </div></div>
+    <div class="c6">
+      <div class="board">
+        <section><h3 class="d4">Works today</h3><ul><li>Follows the line to a junction with PID steering.</li><li>Stops at the right junction in 3 to 4 of 6 to 7 runs.</li><li>Pick-up under driver control.</li></ul></section>
+        <section><h3 class="d4">Measured</h3><ul><li>1.88 m in 3 s and 3.11 m in 5 s.</li><li>About 0.61 m/s on the line.</li><li>Inertial distance over-read by about 1.6×.</li></ul></section>
+        <section class="is-dashed"><h3 class="d4">Still in development</h3><ul><li>Encoders: ordered, not yet fitted.</li><li>Automated pick-up and drop.</li><li>Speed test across battery charge.</li></ul></section>
+        <section class="is-dashed"><h3 class="d4">Not yet tested</h3><ul><li>Leaving the Start box.</li><li>U-turns, drops and the repeat cycle.</li><li>The clock check and parking.</li></ul></section>
+      </div>
+      <p style="margin-top:1.8rem"><a class="link" href="strategy.html#autonomous">The full sequence</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 09 THE PEOPLE BEHIND THE MACHINE -->
+<section class="ch people" id="team" data-ch="09" data-title="The people">
+  <div class="wrap">
+    <header class="stack">
+      <p class="tag">09 <b>/ The team</b></p><h2 class="d1" data-lines><span>The people behind</span><span>the machine</span></h2>
+      <p class="lede" style="max-width:46ch">Eight roles. Every work area has a named lead, and all but one a named support.</p>
+    </header>
+    <div class="slats" id="slats"></div>
+    <noscript><p style="margin-top:2rem"><a class="link" href="team.html">See all eight members</a></p></noscript>
+    <div class="people-foot"><p class="mono mute">Select a portrait to open a profile</p><a class="link" href="team.html">Roles and responsibilities</a></div>
+  </div>
+</section>
+
+<!-- 10 STRATEGY AND THE GAME -->
+<section class="ch" id="strategy" data-ch="10" data-title="Strategy">
+  <div class="wrap cols">
+    <header class="c12 stack" style="margin-bottom:clamp(1.5rem,4vh,3rem)">
+      <p class="tag">10 <b>/ Game plan</b></p><h2 class="d1" data-lines><span>Strategy and</span><span>the game</span></h2>
+      <p class="lede" style="max-width:46ch">We play an offensive game and rarely defend. Contact inside an opponent's perimeter and de-scoring both carry penalties.</p>
+    </header>
+    <ol class="phases c12">
+      <li><p class="mono mute">Phase 01</p><h3 class="d3">Autonomous</h3><p>Leave the box, follow the line, pick and drop CORE. The first junction is proven. The rest is in test.</p></li>
+      <li><p class="mono mute">Phase 02</p><h3 class="d3">Driver control</h3><p>Cycle CORE to the High Poles, and use the Cargo Bay to unlock Starburst early.</p></li>
+      <li><p class="mono mute">Phase 03</p><h3 class="d3">Endgame</h3><p>Final 30 seconds: Balance on the Space Station for 15, or Dock for 8.</p></li>
+    </ol>
+    <div class="c6" style="margin-top:clamp(2.5rem,6vh,4rem)">
+      <h3 class="d4" style="margin-bottom:1rem">Expected score</h3>
+      <dl class="sum">
+        <div><dt>6 CORE on High Poles, 3 each</dt><dd>18</dd></div>
+        <div><dt>3 CORE on Star Poles, 5 each</dt><dd>15</dd></div>
+        <div><dt>Dock on the Space Station</dt><dd>8</dd></div>
+        <div class="total"><dt>Total. Balance instead of Dock adds 7.</dt><dd>41 to 48</dd></div>
+      </dl>
+      <p class="cap">Our own arithmetic for a target match. These are expected scores, not competition results.</p>
+    </div>
+    <div class="c5 s8" style="margin-top:clamp(2.5rem,6vh,4rem)">
+      <h3 class="d4" style="margin-bottom:1rem">Who does what</h3>
+      <ul class="list-rule">
+        <li><b>Driver</b><span>Only drives and scores.</span></li>
+        <li><b>Human Player</b><span>Feeds the Source Zone and presses Starburst.</span></li>
+        <li><b>Drive Strategist</b><span>Calls time at 1:00 and 2:00.</span></li>
+      </ul>
+      <p style="margin-top:1.8rem"><a class="link" href="strategy.html">The whole game plan</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 THE GLITCH CONTINUES -->
+<section class="ch t-red brandch" id="brand" data-ch="11" data-title="The glitch continues">
+  <div class="wrap cols">
+    <div class="c7 stack" style="--gap:2rem">
+      <p class="tag">11 <b>/ Brand and social</b></p>
+      <h2 class="d1" data-lines><span>The glitch</span><span>continues</span></h2>
+      <p class="lede">Our whole brand is the mask. We publish member introductions, the kit unboxing, build progress and competition updates, all shot on a phone under the same red and blue light.</p>
+      <div>
+        <div class="stats">
+          <div><p class="num">78</p><p>Followers</p></div>
+          <div><p class="num">23</p><p>Posts</p></div>
+          <div><p class="num">13K+</p><p>Reach and views</p></div>
+        </div>
+        <p class="cap" style="color:var(--ink)">Figures as of 13 November 2026. They are a snapshot, not a live count.</p>
+      </div>
+      <ul class="plays">
+        <li><h3 class="d4">Meet the masks <small>1 post a week</small></h3><p>One member introduction a week, in mask and formal wear. The role is hinted at. The face never is.</p></li>
+        <li><h3 class="d4">Glitch Log <small>15 s a week</small></h3><p>A quick build-progress clip of Pixel, plus an unboxing reel when the kit arrived.</p></li>
+        <li><h3 class="d4">Spirit Cheer <small>Trend reel</small></h3><p>Our masked take on the "We've got spirit" cheer trend.</p></li>
+        <li><h3 class="d4">Mask Stickers <small>Final day</small></h3><p>Two stickers for the final day of NRL: one with a QR code to our Instagram, one with our logo.</p></li>
+      </ul>
+      <div class="end-links" style="justify-content:flex-start"><a class="link" href="https://www.instagram.com/_glitch_d/" rel="noopener">Instagram @_glitch_d</a><a class="link" href="https://www.youtube.com/@Glitched_NRL-190" rel="noopener">YouTube @Glitched_NRL-190</a></div>
+    </div>
+    <figure class="c4 s8 fig" data-p style="align-self:center"><div class="poster"><img src="images/poster.webp" alt="GLITCHED Team 190 poster: masked team members, Pixel under neon light, and a circuit board" width="900" height="1200" loading="lazy" decoding="async"></div></figure>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="ch end" id="contact">
+  <div class="end-main">
+    <img src="images/wordmark.webp" alt="GLITCHED" width="1446" height="265" loading="lazy" decoding="async">
+    <h2 class="d1" data-lines><span>In a world of noise,</span><span>glitch the system.</span></h2>
+  </div>
+  <div class="stack" style="--gap:2.5rem">
+    <dl class="credits" id="credits" aria-label="Who leads what"></dl>
+    <div class="end-links"><a class="link" href="robot.html">The robot</a><a class="link" href="build-log.html">Build log</a><a class="link" href="team.html">Team</a></div>
+  </div>
+</section>
+
+</main>
+<!-- Footer: keep this block identical on every page -->
+<footer class="foot"><div class="foot-row">
+  <p>Glitched // Team 190<br>National Public School, Bangalore<br>National Robotics League 2026, Hyperdrive</p>
+  <nav aria-label="Elsewhere"><a href="https://www.instagram.com/_glitch_d/" rel="noopener">Instagram @_glitch_d</a><a href="https://www.youtube.com/@Glitched_NRL-190" rel="noopener">YouTube @Glitched_NRL-190</a></nav>
+</div></footer>
+<script src="js/team.js"></script>
+<script src="js/home.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

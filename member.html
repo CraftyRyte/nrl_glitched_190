@@ -1,94 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Team member | glitched</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/glitch.css">
-  <link rel="stylesheet" href="css/decor.css">
-  <link rel="stylesheet" href="css/slides.css">
-  <link rel="stylesheet" href="css/bg.css">
-  <link rel="stylesheet" href="css/team.css">
-  <link rel="stylesheet" href="css/neon.css">
-  <link rel="stylesheet" href="css/fpattern.css">
-  <link rel="stylesheet" href="css/polish.css">
-  <link rel="icon" href="images/logo.png">
-  <style>html{scroll-snap-type:none}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team member | GLITCHED // Team 190</title>
+<meta name="description" content="A member of GLITCHED, Team 190.">
+<meta name="theme-color" content="#0B0B0E">
+<link rel="canonical" href="https://nrlglitched190.vercel.app/member.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GLITCHED // Team 190">
+<meta property="og:title" content="Team member | GLITCHED // Team 190">
+<meta property="og:description" content="A member of GLITCHED, Team 190.">
+<meta property="og:url" content="https://nrlglitched190.vercel.app/member.html">
+<meta property="og:image" content="https://nrlglitched190.vercel.app/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/logo.png">
+<link rel="preload" href="fonts/BigShouldersDisplay.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/InstrumentSans.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>(function(d){d.className="js";if(matchMedia("(min-width: 1001px) and (min-height: 640px)").matches&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("pin")})(document.documentElement)</script>
 </head>
 <body>
-  <canvas id="bg" aria-hidden="true"></canvas>
-  <header class="nav">
-    <a class="brand" href="index.html#top"><img src="images/logo.png" alt=""><span class="logo glitch" data-text="glitched">glitched</span></a>
-    <button class="menu-btn" aria-label="Toggle menu">Menu</button>
-    <nav>
-      <a href="index.html#about">About NRL</a>
-      <a href="index.html#challenge">Challenge</a>
-      <a href="index.html#build">Our build</a>
-      <a href="index.html#team">Team</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- Base format for a member page. The content is filled in from js/team.js (member.html?id=1 ... 8, or ?id=mentor). -->
-  <main class="member-page" id="member"></main>
-
-  <script src="js/fx.js"></script>
-  <script src="js/bg.js"></script>
-  <script src="js/ambient.js"></script>
-  <script src="js/team.js"></script>
-  <script>
-    const nav = document.querySelector("nav");
-    document.querySelector(".menu-btn").addEventListener("click", () => nav.classList.toggle("open"));
-
-    const id = new URLSearchParams(location.search).get("id");
-    const found = getPerson(id);
-    const root = document.getElementById("member");
-    const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-    const ph = t => `<p class="ph">${t}</p>`;
-
-    if (!found) {
-      document.title = "Not found | glitched";
-      root.innerHTML = `<a class="back-link" href="index.html#team">&larr; Back to team</a><h1>Member not found</h1><p>That profile does not exist yet.</p>`;
-    } else {
-      const { p, role, prev, next } = found, d = p.details;
-      document.title = p.name + " | glitched";
-      const num = id === "mentor" ? "M" : String(id).padStart(2, "0");
-      const photo = p.photo ? `<div class="avatar"><img src="${esc(p.photo)}" alt="${esc(p.name)}"></div>` : `<div class="avatar">${esc(initials(p.name))}</div>`;
-      const chips = d.skills.length ? `<div class="chips">${d.skills.map(s => `<span class="chip">${esc(s)}</span>`).join("")}</div>` : ph("Skills will be added here.");
-      const contrib = d.contributions.length ? `<ul class="m-list">${d.contributions.map(c => `<li>${esc(c)}</li>`).join("")}</ul>` : ph("Contributions to the build will be added here.");
-      const links = d.links.length ? `<ul class="m-list">${d.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a></li>`).join("")}</ul>` : ph("Links and contact details will be added here.");
-      const nameOf = x => x.name;
-      const hrefOf = x => "member.html?id=" + x.id;
-      root.innerHTML = `
-        <a class="back-link" href="index.html#team">&larr; Back to team</a>
-        <section class="m-hero">
-          <div class="m-photo">${photo}</div>
-          <div class="m-info">
-            <div class="m-num">${num}</div>
-            <h1 class="glitch" data-text="${esc(p.name)}">${esc(p.name)}</h1>
-            <span class="m-role">${esc(role)}</span>
-            <p class="m-bio">${esc(p.bio)}</p>
-          </div>
-        </section>
-        <section class="m-grid">
-          <article class="m-card"><h2>About</h2>${d.about ? `<p>${esc(d.about)}</p>` : ph("A longer introduction will be added here.")}</article>
-          <article class="m-card"><h2>Skills</h2>${chips}</article>
-          <article class="m-card"><h2>Role in the build</h2>${d.build ? `<p>${esc(d.build)}</p>` : ph("What this person did on the robot and in the code will be added here.")}</article>
-          <article class="m-card"><h2>Links</h2>${links}</article>
-          <article class="m-card wide"><h2>Contributions</h2>${contrib}</article>
-        </section>
-        <nav class="m-nav" aria-label="More members">
-          <a href="${hrefOf(prev)}"><small>&larr; Previous</small>${esc(nameOf(prev))}</a>
-          <a class="mid" href="index.html#team">All members</a>
-          <a href="${hrefOf(next)}"><small>Next &rarr;</small>${esc(nameOf(next))}</a>
-        </nav>`;
-    }
-  </script>
-  <script src="js/polish.js"></script>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<!-- Navigation: keep this block identical on every page -->
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="GLITCHED, Team 190. Home"><img src="images/logo.png" alt="" width="653" height="468"><span>Glitched <i>// Team 190</i></span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav-links" id="nav-links" aria-label="Main"><a href="robot.html">The robot</a><a href="engineering.html">Engineering</a><a href="build-log.html">Build log</a><a href="team.html" aria-current="page">Team</a><a href="strategy.html">Strategy</a></nav>
+</header>
+<main id="main"><div id="member"></div>
+<noscript><section class="ph"><div class="wrap"><h1 class="d2">Profiles need JavaScript</h1><p class="lede"><a class="inline" href="team.html">Back to the team</a></p></div></section></noscript>
+</main>
+<!-- Footer: keep this block identical on every page -->
+<footer class="foot"><div class="foot-row">
+  <p>Glitched // Team 190<br>National Public School, Bangalore<br>National Robotics League 2026, Hyperdrive</p>
+  <nav aria-label="Elsewhere"><a href="https://www.instagram.com/_glitch_d/" rel="noopener">Instagram @_glitch_d</a><a href="https://www.youtube.com/@Glitched_NRL-190" rel="noopener">YouTube @Glitched_NRL-190</a></nav>
+</div></footer>
+<script src="js/team.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

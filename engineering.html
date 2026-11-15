@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering | GLITCHED // Team 190</title>
+<meta name="description" content="How Pixel works: the acrylic plate chassis and drivetrain, the 12 V electrical system and wiring diagram, and the C++ firmware with PID line following.">
+<meta name="theme-color" content="#0B0B0E">
+<link rel="canonical" href="https://nrlglitched190.vercel.app/engineering.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GLITCHED // Team 190">
+<meta property="og:title" content="Engineering | GLITCHED // Team 190">
+<meta property="og:description" content="How Pixel works: the acrylic plate chassis and drivetrain, the 12 V electrical system and wiring diagram, and the C++ firmware with PID line following.">
+<meta property="og:url" content="https://nrlglitched190.vercel.app/engineering.html">
+<meta property="og:image" content="https://nrlglitched190.vercel.app/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/logo.png">
+<link rel="preload" href="fonts/BigShouldersDisplay.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/InstrumentSans.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>(function(d){d.className="js";if(matchMedia("(min-width: 1001px) and (min-height: 640px)").matches&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("pin")})(document.documentElement)</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<!-- Navigation: keep this block identical on every page -->
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="GLITCHED, Team 190. Home"><img src="images/logo.png" alt="" width="653" height="468"><span>Glitched <i>// Team 190</i></span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav-links" id="nav-links" aria-label="Main"><a href="robot.html">The robot</a><a href="engineering.html" aria-current="page">Engineering</a><a href="build-log.html">Build log</a><a href="team.html">Team</a><a href="strategy.html">Strategy</a></nav>
+</header>
+<main id="main">
+<section class="ph"><div class="wrap">
+  <p class="tag">Engineering</p>
+  <h1 class="d1">Under the hood</h1>
+  <p class="lede">The final design as it stands: structure, power and code. How we got here is in the build log.</p>
+  <nav class="subnav" aria-label="On this page"><a href="#mechanical">Mechanical</a><a href="#electrical">Electrical</a><a href="#software">Software</a><a href="#controls">Driver controls</a></nav>
+</div></section>
+
+<!-- MECHANICAL -->
+<section class="sec" id="mechanical"><div class="wrap cols">
+  <div class="c12 sec-head"><p class="tag">Part 1 of 3</p><h2 class="d2">Mechanical</h2></div>
+  <div class="c5 stack">
+    <p class="lede">A laser-cut acrylic plate structure on aluminium standoffs keeps the frame light and the centre of mass low.</p>
+    <div class="body mute"><p>Four geared Johnson motors, two per side, drive through 6 mm shafts into set-screw hubs carrying higher-grip tyres. Two digital servos work the arm and the gripper, which is profiled around the 95 mm CORE ring.</p></div>
+  </div>
+  <figure class="c6 s7 fig" data-wipe><div class="frame" style="aspect-ratio:3/2"><img src="images/arm-gripper.webp" alt="The clear acrylic arm and gripper on aluminium standoffs, with the arm servo behind" width="1400" height="921" loading="lazy" decoding="async"></div><figcaption class="cap">Arm and gripper.</figcaption></figure>
+
+  <div class="c4" style="margin-top:2rem"><h3 class="d4" style="margin-bottom:1rem">Our own engineering</h3>
+    <ul class="ticks">
+      <li>Bolted 3D-printed motor clamps react the drive torque into the base plate, so the mounts cannot rotate under load.</li>
+      <li>300 RPM gearing was chosen over 600 RPM because traction, not stall torque, is the limit at this mass.</li>
+      <li>A 180° rotating arm was rejected on stability and driver-workload grounds.</li>
+    </ul></div>
+  <div class="c4" style="margin-top:2rem"><h3 class="d4" style="margin-bottom:1rem">How it moves</h3>
+    <ul class="ticks">
+      <li>Differential (tank) drive: the two sides are commanded independently, for straight lines and spot turns.</li>
+      <li>The arm sweeps a 90° envelope, from stowed to scoring height.</li>
+      <li>The gripper toggles between two commanded positions, open and clamped.</li>
+      <li>With the arm stowed, the sensor bar sits parallel to the mat and holds the infrared array at a constant stand-off.</li>
+    </ul></div>
+  <div class="c4" style="margin-top:2rem"><h3 class="d4" style="margin-bottom:1rem">Quick repair</h3>
+    <ul class="ticks">
+      <li>Set-screw hubs and bolted clamps allow a wheel or motor swap in roughly 20 minutes, with hand tools and a soldering iron.</li>
+      <li>The infrared array is recalibrated on the venue mat before each match.</li>
+    </ul>
+    <figure class="fig" style="margin-top:1.5rem"><div class="frame" style="aspect-ratio:4/3"><img src="images/motor-mount.webp" alt="A drive motor held to the acrylic base plate by a black 3D-printed clamp, beside its wheel hub" width="804" height="568" loading="lazy" decoding="async"></div><figcaption class="cap">Motor mount and wheel hub, during the build.</figcaption></figure></div>
+</div></section>
+
+<!-- ELECTRICAL -->
+<section class="sec t-carbon" id="electrical"><div class="wrap cols">
+  <div class="c12 sec-head"><p class="tag">Part 2 of 3</p><h2 class="d2">Electrical</h2></div>
+  <p class="c7 lede" style="max-width:52ch">One 12 V lithium-ion pack feeds the HEXA Command Hub through a single main switch. The Hub drives both servos directly and commands a separate motor driver, which supplies the four drive motors.</p>
+  <div class="c12">
+    <button class="zoom" type="button" data-zoom="images/wiring.webp" data-caption="Official NRL Hyperdrive control system, as wired on Pixel"><img src="images/wiring.webp" alt="Wiring diagram. The robot battery and power switch feed the HEXA Command Hub. The Hub connects to four servo outputs and, by 6-pin JST-SH cables, to the motor driver, which powers four DC motors." width="1723" height="913" loading="lazy" decoding="async"><span class="zoom-hint">Inspect the diagram</span></button>
+    <p class="cap">The official NRL Hyperdrive control system, as wired on Pixel. Select the diagram to zoom and pan.</p>
+  </div>
+  <div class="c12" style="margin-top:2rem"><h3 class="d4" style="margin-bottom:1rem">Components</h3>
+    <div class="tbl-scroll"><table class="tbl">
+      <thead><tr><th scope="col">Component</th><th scope="col">Qty</th><th scope="col">Specification and role</th></tr></thead>
+      <tbody>
+        <tr><td>Johnson geared DC motor</td><td>4</td><td>12 V, 300 RPM, two per side. The left side is flipped in software.</td></tr>
+        <tr><td>Motor driver board</td><td>1</td><td>Takes the Hub's 6-pin JST-SH command link, drives the motors and carries the encoder port.</td></tr>
+        <tr><td>Servo</td><td>2</td><td>Arm and gripper: a Robokits RKI-1248 (20 kg·cm) and a Robotics Dynamix RDS-3225.</td></tr>
+        <tr><td>Infrared line array</td><td>8 ch</td><td>Read through an 8-to-1 multiplexer on GPIO 15 and 16.</td></tr>
+        <tr><td>LSM6DSOX inertial unit</td><td>1</td><td>Measures turning angle over I2C.</td></tr>
+        <tr><td>HEXA Command Hub</td><td>1</td><td>ESP32-S3. Runs our code and the NRL link.</td></tr>
+        <tr><td>12 V lithium-ion battery</td><td>1</td><td>18650 cells, 2200 mAh. Powers everything through the main switch and charges through the DC jack.</td></tr>
+      </tbody>
+    </table></div></div>
+  <div class="c6" style="margin-top:2rem"><h3 class="d4" style="margin-bottom:1rem">Power and safety</h3>
+    <ul class="ticks">
+      <li>Single-battery architecture, one pack per robot (R6.3, R6.4).</li>
+      <li>All joints are insulated, with no exposed conductors.</li>
+      <li>The main switch and status indicator stay accessible and visible without disassembly (R6.6, R6.8, R6.9, R8.15).</li>
+      <li>The harness runs through the top-plate pass-through, clear of rotating parts.</li>
+      <li>The driver station links over ESP-NOW, our only wireless link (R8.9).</li>
+    </ul>
+    <p style="margin-top:1.2rem"><span class="st st-dev">Open action</span></p>
+    <p class="mute" style="margin-top:.6rem;max-width:48ch">No inline fuse is fitted yet. The main switch is currently the only isolation point, and over-current protection is still to do.</p></div>
+  <div class="c5 s8" style="margin-top:2rem"><h3 class="d4" style="margin-bottom:1rem">Troubleshooting</h3>
+    <ul class="list-rule">
+      <li><b>Reversed drive</b><span>Corrected by inverting the left-side sign in firmware.</span></li>
+      <li><b>Array not found</b><span>The infrared array did not enumerate. Traced to Hub firmware and resolved by reflashing.</span></li>
+      <li><b>Encoders</b><span>Planned. They connect to the driver's dedicated port, clear of the multiplexer lines on GPIO 15 and 16.</span></li>
+    </ul></div>
+</div></section>
+
+<!-- SOFTWARE -->
+<section class="sec" id="software"><div class="wrap cols">
+  <div class="c12 sec-head"><p class="tag">Part 3 of 3</p><h2 class="d2">Software</h2></div>
+  <div class="c7 stack">
+    <p class="lede" style="max-width:50ch">The firmware is C++17 on the Arduino framework for the ESP32-S3, written in Visual Studio Code with PlatformIO against NRL SDK v1.5.0.</p>
+    <div class="body mute"><p>All team code lives in the opmodes directory (R8.2) and is version-controlled on GitHub. Each program is registered as an OpMode, either driver-controlled (TELEOP) or autonomous (AUTO). Every OpMode is committed, so a tuning change can be rolled back to the last run that passed.</p></div>
+    <div><h3 class="d4" style="margin:1.5rem 0 1rem">Interfaces</h3>
+      <ul class="list-rule">
+        <li><b>Drive</b><span>Differential commands issued through the motor driver.</span></li>
+        <li><b>Actuators</b><span>Commanded angular positions for the arm and gripper.</span></li>
+        <li><b>Line array</b><span>3 address lines and 1 analogue return through the multiplexer.</span></li>
+        <li><b>Inertial unit</b><span>Heading over I2C.</span></li>
+        <li><b>Encoders</b><span>Planned.</span></li>
+      </ul></div>
+    <div><h3 class="d4" style="margin:1.5rem 0 1rem">Key algorithms</h3>
+      <ul class="ticks">
+        <li>PID steering driven by the weighted line error.</li>
+        <li>Junction detection: the edge pair and the centre pair saturate together, confirmed by the end bar.</li>
+        <li>A gyroscopic guard suppresses line events until roughly 60° for a quarter turn, or 150° for a reversal.</li>
+      </ul></div>
+  </div>
+  <div class="c4 s9">
+    <h3 class="d4" style="margin-bottom:1rem">Autonomous flowchart</h3>
+    <ol class="flow" aria-label="Autonomous program, step by step">
+      <li>Select AUTO OpMode</li>
+      <li>INIT: motors, servos, line array. No movement.</li>
+      <li>Auto start: clear fault, counts, route</li>
+      <li class="is-planned">Leave Start box<small>Planned, not yet tested</small></li>
+      <li class="is-works">Follow line to junction<small>Works today</small></li>
+      <li>Time left above park reserve?</li>
+      <li class="is-planned">Yes: pick up, U-turn, drop, repeat.<br>No: follow line to Park box, stop.<small>Planned, not yet tested</small></li>
+      <li class="is-stop">Any fault, emergency stop (RB) or lost link: motors stop</li>
+    </ol>
+    <p class="cap">A blue outline works today. Dashed steps are planned and not yet tested.</p>
+  </div>
+  <div class="c6" style="margin-top:2.5rem"><h3 class="d4" style="margin-bottom:1rem">Fault handling</h3>
+    <div class="tbl-scroll"><table class="tbl">
+      <thead><tr><th scope="col">Trigger</th><th scope="col">Response</th></tr></thead>
+      <tbody>
+        <tr><td>Line lost for 3 cycles</td><td>Latch the fault, cut drive, name it on the driver station.</td></tr>
+        <tr><td>Emergency stop pressed</td><td>Immediate drive cut (R8.15).</td></tr>
+        <tr><td>Driver-station link lost</td><td>Immediate drive cut.</td></tr>
+      </tbody>
+    </table></div></div>
+  <div class="c5 s8" style="margin-top:2.5rem"><h3 class="d4" style="margin-bottom:1rem">Testing and debugging</h3>
+    <ul class="ticks">
+      <li>One variable is tuned at a time, and each configuration is repeated 3 to 5 times.</li>
+      <li>Current reliability: 3 to 4 successes in 6 to 7 runs. Gains will be logged after retuning with encoders fitted.</li>
+      <li>Fault state, junction count and live line error are sent to the driver station.</li>
+      <li>Inertial odometry over-read by about 1.6×, so distance now comes from taped references. The calibrated follower covered 1.88 m in 3 s and 3.11 m in 5 s.</li>
+    </ul></div>
+</div></section>
+
+<!-- CONTROLS -->
+<section class="sec t-carbon" id="controls"><div class="wrap cols" data-hs>
+  <div class="c12 sec-head"><p class="tag">Driver station</p><h2 class="d2">Every control</h2><p class="mute">Select a control in the table, or a ring on the controller.</p></div>
+  <figure class="c7 fig ctrl"><div class="hs-stage"><img src="images/controller.webp" alt="The driver station controller, labelled: LB precision mode, RB emergency stop, button 1 turbo mode, X 90 degrees left, B 90 degrees right, A 180 degree turn, and two sticks" width="1456" height="820" loading="lazy" decoding="async"><button class="hs-dot" type="button" style="--x:36.3%;--y:65.4%" data-k="ls" aria-pressed="false" aria-label="Left stick, up and down: Drive forward and backward"></button><button class="hs-dot" type="button" style="--x:62.3%;--y:65.4%" data-k="rs" aria-pressed="false" aria-label="Right stick, left and right: Turn the robot"></button><button class="hs-dot" type="button" style="--x:23%;--y:27.5%" data-k="lb" aria-pressed="false" aria-label="LB: Precision mode: slow, fine control"></button><button class="hs-dot" type="button" style="--x:75%;--y:27.5%" data-k="rb" aria-pressed="false" aria-label="RB: Emergency stop"></button><button class="hs-dot" type="button" style="--x:22.6%;--y:56.6%" data-k="b1" aria-pressed="false" aria-label="Button 1: Toggles turbo mode"></button><button class="hs-dot" type="button" style="--x:70.7%;--y:57.3%" data-k="a" aria-pressed="false" aria-label="A: 180° turn"></button><button class="hs-dot" type="button" style="--x:66%;--y:47.2%" data-k="x" aria-pressed="false" aria-label="X: 90° left"></button><button class="hs-dot" type="button" style="--x:74.6%;--y:47.6%" data-k="b" aria-pressed="false" aria-label="B: 90° right"></button></div><figcaption class="cap">Driver station, labelled control layout.</figcaption></figure>
+  <div class="c5">
+    <table class="tbl map"><thead><tr><th scope="col">Control</th><th scope="col">What it does</th></tr></thead><tbody><tr data-hs-item data-k="ls"><td>Left stick, up and down</td><td>Drive forward and backward</td></tr><tr data-hs-item data-k="rs"><td>Right stick, left and right</td><td>Turn the robot</td></tr><tr data-hs-item data-k="rs"><td>Right stick, up and down</td><td>Move the arm (90° to 180°)</td></tr><tr data-hs-item data-k="lb"><td>LB</td><td>Precision mode: slow, fine control</td></tr><tr data-hs-item data-k="rb"><td>RB</td><td>Emergency stop</td></tr><tr data-hs-item data-k="b1"><td>Button 1</td><td>Toggles turbo mode</td></tr><tr data-hs-item data-k="a"><td>A</td><td>180° turn</td></tr><tr data-hs-item data-k="x"><td>X</td><td>90° left</td></tr><tr data-hs-item data-k="b"><td>B</td><td>90° right</td></tr></tbody></table>
+  </div>
+  <div class="c12" style="margin-top:2rem"><h3 class="d4" style="margin-bottom:1rem">Why it is mapped this way</h3>
+    <ul class="list-rule">
+      <li><b>Two sticks, no sharing</b><span>Translation and rotation stay on separate sticks, so the driver never fights one axis against another.</span></li>
+      <li><b>Turns on face buttons</b><span>90° and 180° turns are closed-loop routines, not stick work, so repeat accuracy does not depend on driver feel.</span></li>
+      <li><b>Two speed regimes</b><span>Precision mode for scoring approaches, turbo for open-field transits.</span></li>
+      <li><b>Stop on a shoulder</b><span>The emergency stop is reachable without a thumb leaving either stick (R8.15).</span></li>
+      <li><b>Driver workload</b><span>One operator runs the whole robot. The Human Player feeds the Source Zone and the Drive Strategist calls time.</span></li>
+    </ul></div>
+</div></section>
+</main>
+<!-- Footer: keep this block identical on every page -->
+<footer class="foot"><div class="foot-row">
+  <p>Glitched // Team 190<br>National Public School, Bangalore<br>National Robotics League 2026, Hyperdrive</p>
+  <nav aria-label="Elsewhere"><a href="https://www.instagram.com/_glitch_d/" rel="noopener">Instagram @_glitch_d</a><a href="https://www.youtube.com/@Glitched_NRL-190" rel="noopener">YouTube @Glitched_NRL-190</a></nav>
+</div></footer>
+<script src="js/site.js"></script>
+</body>
+</html>

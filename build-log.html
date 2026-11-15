@@ -1,61 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Build log | glitched</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/glitch.css">
-  <link rel="stylesheet" href="css/decor.css">
-  <link rel="stylesheet" href="css/slides.css">
-  <link rel="stylesheet" href="css/bg.css">
-  <link rel="stylesheet" href="css/team.css">
-  <link rel="stylesheet" href="css/neon.css">
-  <link rel="stylesheet" href="css/fpattern.css">
-  <link rel="stylesheet" href="css/polish.css">
-  <link rel="icon" href="images/logo.png">
-  <style>html{scroll-snap-type:none}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build log | GLITCHED // Team 190</title>
+<meta name="description" content="The engineering journal behind Pixel: three prototypes, every fault we hit, the options we weighed and what is still planned.">
+<meta name="theme-color" content="#0B0B0E">
+<link rel="canonical" href="https://nrlglitched190.vercel.app/build-log.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GLITCHED // Team 190">
+<meta property="og:title" content="Build log | GLITCHED // Team 190">
+<meta property="og:description" content="The engineering journal behind Pixel: three prototypes, every fault we hit, the options we weighed and what is still planned.">
+<meta property="og:url" content="https://nrlglitched190.vercel.app/build-log.html">
+<meta property="og:image" content="https://nrlglitched190.vercel.app/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/logo.png">
+<link rel="preload" href="fonts/BigShouldersDisplay.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/InstrumentSans.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>(function(d){d.className="js";if(matchMedia("(min-width: 1001px) and (min-height: 640px)").matches&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("pin")})(document.documentElement)</script>
 </head>
 <body>
-  <canvas id="bg" aria-hidden="true"></canvas>
-  <header class="nav">
-    <a class="brand" href="index.html#top"><img src="images/logo.png" alt=""><span class="logo glitch" data-text="glitched">glitched</span></a>
-    <button class="menu-btn" aria-label="Toggle menu">Menu</button>
-    <nav>
-      <a href="index.html#about">About NRL</a>
-      <a href="index.html#challenge">Challenge</a>
-      <a href="index.html#build">Our build</a>
-      <a href="index.html#team">Team</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
-  <main id="top">
-    <section class="wrap" style="padding-top:8rem;min-height:100vh">
-      <h2>Build log</h2>
-      <p class="lead">Every bug we hit and how we fixed it. Our first build session was on 17 October 2026, and we had eight build sessions by 11 November.</p>
-      <div class="log-list">
-        <div class="log-entry"><h3>Entry 01: Build stopped by a typo</h3><p class="err">ERROR: <code>TankDrve</code> instead of <code>TankDrive</code> stopped the build</p><p class="ok">FIXED: corrected the name and rebuilt</p></div>
-        <div class="log-entry"><h3>Entry 02: Line sensor not detected</h3><p class="err">ERROR: the Hub did not detect the line sensor</p><p class="ok">FIXED: reflashed the Hub</p></div>
-        <div class="log-entry"><h3>Entry 03: Motors ran reversed</h3><p class="err">ERROR: motors ran in the wrong direction</p><p class="ok">FIXED: inverted the left side in firmware</p></div>
-        <div class="log-entry"><h3>Entry 04: Inertial sensor distance error</h3><p class="err">ERROR: the inertial sensor over-read distance by about 1.6x</p><p class="ok">FIXED: distances now come from taped references, and the sensor is used for turns only</p></div>
-        <div class="log-entry"><h3>Entry 05: Line following on new tape</h3><p class="err">ERROR: line following needed recalibration on new tape</p><p class="ok">FIXED: recalibrate the sensor array at each venue</p></div>
-        <div class="log-entry"><h3>Decision: 300 RPM motors</h3><p class="ok">We kept 300 RPM over 600 RPM because traction, not torque, limits pushing. We then upgraded to Grade A motors and new wheels.</p></div>
-        <div class="log-entry"><h3>Decision: no rotating arm</h3><p class="ok">We rejected a 180° rotating arm because it was unstable and harder to drive.</p></div>
-      </div>
-      <a class="btn back" href="index.html#build">Back to the site</a>
-    </section>
-  </main>
-  <script src="js/fx.js"></script>
-  <script src="js/bg.js"></script>
-  <script src="js/ambient.js"></script>
-  <script>
-    const nav=document.querySelector("nav");
-    document.querySelector(".menu-btn").addEventListener("click",()=>nav.classList.toggle("open"));
-  </script>
-  <script src="js/polish.js"></script>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<!-- Navigation: keep this block identical on every page -->
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="GLITCHED, Team 190. Home"><img src="images/logo.png" alt="" width="653" height="468"><span>Glitched <i>// Team 190</i></span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav-links" id="nav-links" aria-label="Main"><a href="robot.html">The robot</a><a href="engineering.html">Engineering</a><a href="build-log.html" aria-current="page">Build log</a><a href="team.html">Team</a><a href="strategy.html">Strategy</a></nav>
+</header>
+<main id="main">
+<section class="ph"><div class="wrap">
+  <p class="tag">Build log</p>
+  <h1 class="d1">What broke, and what we did</h1>
+  <p class="lede">Eight build sessions, from 17 October to 11 November 2026. Each entry is one chain: goal, problem, options, fix, result.</p>
+  <p class="cap" style="max-width:60ch">The portfolio records the order of the work, not the date of each fix, so entries run in build order.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="j-mark"><b>17 Oct 2026</b><span class="mono mute">First build session</span></div>
+
+  <div class="journal">
+    <header class="j-stage"><p class="num" aria-hidden="true">P1</p><h2 class="d3">Manual kit</h2><p>Kit chassis with arm and gripper. Tank drive and servo arm by controller. No line sensor.</p></header>
+    <div class="j-entries">
+      <article class="j-entry "><span class="st st-measured">Decision</span><h3 class="d3">300 RPM or 600 RPM</h3><dl><div class="j-row "><dt>Goal</dt><dd>Push and carry reliably at 2.5 kg, under the 8 kg limit.</dd></div><div class="j-row "><dt>Options</dt><dd>300 RPM, at about 300 N-cm stall torque in seller listings, or 600 RPM at about 122 N-cm.</dd></div><div class="j-row is-fix"><dt>Decision</dt><dd>Kept 300 RPM. At 2.5 kg, traction limits pushing, not torque. Fitted new wheels for grip and quality.</dd></div><div class="j-row "><dt>Result</dt><dd>About 1.57 m/s at full power, calculated from 300 RPM and 10 cm wheels.</dd></div></dl></article>
+      <article class="j-entry is-fix"><span class="st st-works">Fixed</span><h3 class="d3">Motors twisting in their mounts</h3><dl><div class="j-row is-problem"><dt>Problem</dt><dd>Motors can twist under load.</dd></div><div class="j-row is-fix"><dt>Fix</dt><dd>Designed bolted 3D-printed clamps. The wheels sit on set-screw hubs.</dd></div><div class="j-row "><dt>Result</dt><dd>The motors stay fixed under load.</dd></div></dl><figure class="fig"><div class="frame"><img src="images/motor-mount.webp" alt="A drive motor clamped to the acrylic base plate, with its shaft in a wheel hub" width="804" height="568" loading="lazy" decoding="async"></div><figcaption class="cap">Motor mount and wheel hub.</figcaption></figure></article>
+      <article class="j-entry "><span class="st st-dev">Partly working</span><h3 class="d3">The arm: reach against stability</h3><dl><div class="j-row "><dt>Goal</dt><dd>Lift the 95 mm CORE ring and release it on a pole or in the Drop Zone.</dd></div><div class="j-row is-problem"><dt>Problem</dt><dd>Reach and stability pull against each other. A longer arm scores higher but shifts the centre of mass.</dd></div><div class="j-row "><dt>Options</dt><dd>A 180° rotating arm was rejected on stability and driver-workload grounds.</dd></div><div class="j-row is-fix"><dt>Fix</dt><dd>A fixed-plane arm sweeping a 90° envelope, with a two-position gripper profiled to the ring.</dd></div><div class="j-row "><dt>Result</dt><dd>Driver-controlled pick-up works. Automated pick-and-drop is planned, not yet tested.</dd></div></dl><figure class="fig"><div class="frame"><img src="images/arm-gripper.webp" alt="The acrylic arm and gripper mechanism" width="1400" height="921" loading="lazy" decoding="async"></div><figcaption class="cap">Arm and gripper.</figcaption></figure></article>
+      <article class="j-entry is-fix"><span class="st st-works">Fixed</span><h3 class="d3">The robot drove backwards</h3><dl><div class="j-row is-problem"><dt>Problem</dt><dd>Drive direction was reversed.</dd></div><div class="j-row is-fix"><dt>Fix</dt><dd>Inverted the left-side sign in firmware.</dd></div></dl></article>
+    </div>
+  </div>
+  <div class="journal">
+    <header class="j-stage"><p class="num" aria-hidden="true">P2</p><h2 class="d3">Line following</h2><p>P1 plus the 8-channel infrared array and the inertial unit. PID line following with a junction stop.</p></header>
+    <div class="j-entries">
+      <article class="j-entry is-fix"><span class="st st-works">Fixed</span><h3 class="d3">A typo stopped the build</h3><dl><div class="j-row "><dt>Goal</dt><dd>Follow the line with PID on the 8-sensor array and stop at the first junction.</dd></div><div class="j-row is-problem"><dt>Problem</dt><dd>The build stopped on a typo: <code>TankDrve</code> instead of <code>TankDrive</code>.</dd></div><div class="j-row is-fix"><dt>Fix</dt><dd>Corrected it and rebuilt.</dd></div></dl></article>
+      <article class="j-entry is-fix"><span class="st st-works">Fixed</span><h3 class="d3">The Hub could not see the line sensor</h3><dl><div class="j-row is-problem"><dt>Problem</dt><dd>The Hub did not detect the line sensor. The array was not enumerating.</dd></div><div class="j-row is-fix"><dt>Fix</dt><dd>Traced it to Hub firmware and reflashed the HEXA Command Hub.</dd></div><div class="j-row "><dt>Result</dt><dd>Stops at the right junction in 3 to 4 of 6 to 7 runs.</dd></div></dl><figure class="fig"><div class="frame"><img src="images/ir-array.webp" alt="The curved white circuit board of the infrared line array" width="1120" height="280" loading="lazy" decoding="async"></div><figcaption class="cap">Our 8-sensor infrared line array.</figcaption></figure></article>
+      <article class="j-entry "><span class="st st-measured">Measured</span><h3 class="d3">New tape, new calibration</h3><dl><div class="j-row "><dt>Goal</dt><dd>Stay centred on the line and know our real speed.</dd></div><div class="j-row is-problem"><dt>Problem</dt><dd>On new tape the robot stayed centred only after recalibrating.</dd></div><div class="j-row is-fix"><dt>Decision</dt><dd>Recalibrate at every venue, because new tape needed it.</dd></div><div class="j-row is-fix"><dt>Fix</dt><dd>Re-ran LINE TEST and wrote a Speed Test OpMode for timed 3 s and 5 s runs.</dd></div><div class="j-row "><dt>Result</dt><dd>1.88 m in 3 s and 3.11 m in 5 s, about 0.61 m/s.</dd></div></dl><figure class="fig"><div class="frame"><img src="images/test-arena.webp" alt="A black tape track on a white tile floor" width="1280" height="470" loading="lazy" decoding="async"></div><figcaption class="cap">Test arena: tape on a tile floor.</figcaption></figure></article>
+      <article class="j-entry "><span class="st st-dev">Partly working</span><h3 class="d3">The inertial unit read 1.6× too far</h3><dl><div class="j-row "><dt>Goal</dt><dd>Drive known distances for the pick-and-drop route.</dd></div><div class="j-row is-problem"><dt>Problem</dt><dd>The inertial unit read about 1.6× too far.</dd></div><div class="j-row "><dt>Options</dt><dd>The inertial unit, tape-measured distance, or encoders.</dd></div><div class="j-row is-fix"><dt>Fix</dt><dd>Tape-measured distances for now. The inertial unit is used only for turns, with a gyro guard: about 60° for a 90° turn and about 150° for a U-turn.</dd></div><div class="j-row "><dt>Result</dt><dd>Distances come from tape. The full-route test is still to do.</dd></div></dl></article>
+    </div>
+  </div>
+
+  <div class="j-mark"><b>11 Nov 2026</b><span class="mono mute">Eighth build session. Everything below is planned.</span></div>
+
+  <div class="journal">
+    <header class="j-stage" data-planned><p class="num" aria-hidden="true">P3</p><h2 class="d3">Encoders</h2><p>P2 plus OE-28 encoders and full mission code. Planned: not yet fitted or tested.</p></header>
+    <div class="j-entries">
+      <article class="j-entry is-plan"><span class="st st-planned">Planned, not tested</span><h3 class="d3">Distance from the wheels</h3><dl><div class="j-row "><dt>Goal</dt><dd>Measure distance from the wheels.</dd></div><div class="j-row is-problem"><dt>Problem</dt><dd>The kit motors have no encoder, and rule R5.3 forbids modifying motors.</dd></div><div class="j-row "><dt>Plan</dt><dd>Asked the organisers, then ordered motors and OE-28 encoders. They plug into the motor driver board, clear of the multiplexer pins.</dd></div><div class="j-row "><dt>Result</dt><dd>Not yet fitted or tested.</dd></div></dl><figure class="fig"><div class="frame"><img src="images/encoder.webp" alt="A round green encoder circuit board beside its opened black housing" width="780" height="400" loading="lazy" decoding="async"></div><figcaption class="cap">An encoder, opened up.</figcaption></figure></article>
+      <article class="j-entry is-plan"><span class="st st-planned">Planned, not tested</span><h3 class="d3">Closed-loop odometry</h3><dl><div class="j-row "><dt>Goal</dt><dd>Drive to a commanded distance from wheel counts, with gyroscopically guarded turns.</dd></div><div class="j-row "><dt>Options</dt><dd>Keep taped references as the fallback, or move entirely to encoder counts.</dd></div><div class="j-row "><dt>Plan</dt><dd>Calibrate counts per metre on a measured run, then replace the taped distances step by step.</dd></div><div class="j-row "><dt>Result</dt><dd>Nothing yet. Taped references stay in the program until the encoder route is proven.</dd></div></dl></article>
+      <article class="j-entry is-plan"><span class="st st-planned">Planned, not tested</span><h3 class="d3">Battery and the full route</h3><dl><div class="j-row "><dt>Goal</dt><dd>Confirm that line speed holds across the battery's state of charge, then prove the whole route.</dd></div><div class="j-row is-problem"><dt>Problem</dt><dd>All timings so far come from a freshly charged pack, so late-match behaviour is unknown.</dd></div><div class="j-row "><dt>Options</dt><dd>Log pack voltage against measured speed, or cap the commanded speed with margin.</dd></div><div class="j-row "><dt>Plan</dt><dd>Repeat the timed 3 s and 5 s runs at full, mid and low charge, then run each mission step 3 to 5 times.</dd></div><div class="j-row "><dt>Result</dt><dd>Nothing yet. Planned timings stay below 0.61 m/s until this is measured.</dd></div></dl></article>
+      <article class="j-entry is-plan"><span class="st st-dev">Open action</span><h3 class="d3">Over-current protection</h3><dl><div class="j-row is-problem"><dt>Problem</dt><dd>No inline fuse is fitted. The main switch is the only isolation point.</dd></div><div class="j-row "><dt>Plan</dt><dd>Add over-current protection.</dd></div></dl></article>
+    </div>
+  </div>
+  <p><a class="link" href="strategy.html#autonomous">See the planned autonomous route</a></p>
+</div></section>
+</main>
+<!-- Footer: keep this block identical on every page -->
+<footer class="foot"><div class="foot-row">
+  <p>Glitched // Team 190<br>National Public School, Bangalore<br>National Robotics League 2026, Hyperdrive</p>
+  <nav aria-label="Elsewhere"><a href="https://www.instagram.com/_glitch_d/" rel="noopener">Instagram @_glitch_d</a><a href="https://www.youtube.com/@Glitched_NRL-190" rel="noopener">YouTube @Glitched_NRL-190</a></nav>
+</div></footer>
+<script src="js/site.js"></script>
 </body>
 </html>

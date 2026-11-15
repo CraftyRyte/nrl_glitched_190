@@ -1,130 +1,134 @@
-// ===== EDIT YOUR TEAM HERE =====
-// Add a photo by putting a file in /images and setting photo: "images/name.jpg".
-// Leave photo empty ("") to show initials instead.
-// The "details" block feeds each person's own page (member.html). Fill in what you have, leave the rest empty:
-//   about          a paragraph about them
-//   build          what they did on the robot / in the code
-//   skills         a list of short tags, e.g. ["Python", "PID tuning"]
-//   contributions  a list of things they built or fixed
-//   links          a list like [{ label: "GitHub", url: "https://..." }]
+// ===== THE TEAM: edit people here. Every page that shows the team reads this file. =====
+// Source: engineering portfolio, p. 3 (Team Introduction and responsibility matrix).
+// photo     file in /images. Portraits are the masked ones from the portfolio.
+// owns      work areas this person leads         supports  areas they back up
+// skills    short tags                           does      what they actually did this season
+window.GLITCHED = (function () {
+  const team = [
+    { id: "1", name: "Pranjal", role: "Chief Executive Officer · Team Lead", photo: "images/member-1.webp",
+      owns: ["Electronics and wiring", "Programming and autonomy", "Judge presentation"], supports: ["Robot design", "Mechanical assembly", "Game strategy", "Driving and match play"],
+      skills: ["C++17", "PlatformIO", "NRL SDK", "PID control", "Harness build"],
+      does: ["Wrote the autonomous routine", "Built the power and signal harness"] },
+    { id: "2", name: "Saanvi Kumar", role: "Director of Photography", photo: "images/member-2.webp",
+      owns: ["Photo and video", "Marketing and branding"], supports: [],
+      skills: ["Cinematography", "Shot planning", "Video editing", "Campaign content"],
+      does: ["Documented every build session", "Leads the four-channel campaign"] },
+    { id: "3", name: "Abhijay", role: "Chief Technology Officer", photo: "images/member-3.webp",
+      owns: ["Robot design", "Mechanical assembly"], supports: ["Electronics and wiring", "Programming and autonomy", "Website"],
+      skills: ["Mechanical design", "ESP32-S3 firmware flashing", "Servo actuation", "Wiring"],
+      does: ["Designed and assembled the chassis", "Fixed the infrared array detection fault"] },
+    { id: "4", name: "Naomi", role: "Chief Marketing Officer", photo: "images/member-4.webp",
+      owns: [], supports: ["Engineering notebook", "Marketing and branding"],
+      skills: ["Campaign planning", "Content strategy", "Audience engagement"],
+      does: ["Drafted the engineering notebook", "Shapes the published content"] },
+    { id: "5", name: "Neil", role: "Chief Pilot (Driver)", photo: "images/member-5.webp",
+      owns: ["Driving and match play", "Game strategy", "Rules research", "Website"], supports: [],
+      skills: ["Teleoperated driving", "Rule analysis", "Match strategy", "Web development"],
+      does: ["Drives Pixel in every match", "Built nrlglitched190.vercel.app"] },
+    { id: "6", name: "Saanvi Lalwani", role: "Chief Operating Officer · Team Manager", photo: "images/member-6.webp",
+      owns: ["Engineering notebook", "Planning and deadlines"], supports: ["Presentation to judges"],
+      skills: ["Project scheduling", "Technical documentation", "Concept sketching"],
+      does: ["Drew the first concept sketches", "Scheduled all 8 build sessions"] },
+    { id: "7", name: "Rhea", role: "Managing Director", photo: "images/member-7.webp",
+      owns: [], supports: ["Planning and deadlines", "Rules research"],
+      skills: ["Project scheduling", "Milestone tracking", "Technical documentation"],
+      does: ["Wrote the season plan", "Tracks every milestone"] },
+    { id: "8", name: "Neha", role: "Editor-in-Chief", photo: "images/member-8.webp",
+      owns: ["Human Player on match day"], supports: ["Photo and video"],
+      skills: ["Technical writing", "Editing", "Layout design", "Match-day operations"],
+      does: ["Designed every member introduction post", "Feeds the Source Zone on match day"] }
+  ];
 
-// No mentor has been confirmed yet. To show a mentor card and profile, replace "null" with an object like:
-// { id: "mentor", name: "Name", title: "Team Mentor", bio: "...", photo: "", details: { about: "", build: "", skills: [], contributions: [], links: [] } }
-const mentor = null;
+  // Responsibility matrix: [work area, lead, support]
+  const matrix = [
+    ["Robot design", "Abhijay", "Pranjal"], ["Mechanical assembly", "Abhijay", "Pranjal"],
+    ["Electronics and wiring", "Pranjal", "Abhijay"], ["Programming and autonomy", "Pranjal", "Abhijay"],
+    ["Game strategy", "Neil", "Pranjal"], ["Rules research", "Neil", "Rhea"],
+    ["Driving and match play", "Neil", "Pranjal"], ["Human Player (match day)", "Neha", ""],
+    ["Engineering notebook", "Saanvi Lalwani", "Naomi"], ["Presentation to judges", "Pranjal", "Saanvi Lalwani"],
+    ["Planning and deadlines", "Saanvi Lalwani", "Rhea"], ["Photo and video", "Saanvi Kumar", "Neha"],
+    ["Marketing and branding", "Saanvi Kumar", "Naomi"], ["Website", "Neil", "Abhijay"]
+  ];
+  // ===== END OF EDITABLE AREA =====
 
-const team = [
-  { name: "Pranjal", role: "Chief Executive Officer \u00b7 Team Lead", photo: "",
-    bio: "Leads the team, the electronics and wiring, the autonomous code and the judge presentation.",
-    details: {
-      about: "Pranjal leads the electronics and wiring and the autonomous programming, and presents to the judges. He wrote the line-following routine in C++17 on PlatformIO and built the power and signal harness.",
-      build: "Owns the electronics and wiring, the autonomous program and the judge presentation.",
-      skills: ["C++17", "PlatformIO", "NRL SDK", "PID line following"],
-      contributions: ["Wrote the line-following routine", "Built the power and signal harness", "Chose to keep 300 RPM motors over 600 RPM"],
-      links: [{"label": "Instagram @_glitch_d", "url": "https://www.instagram.com/_glitch_d/"}, {"label": "YouTube @Glitched_NRL-190", "url": "https://www.youtube.com/@Glitched_NRL-190"}] } },
-  { name: "Saanvi Kumar", role: "Director of Photography", photo: "",
-    bio: "Owns the team's photo and video record, marketing and branding.",
-    details: {
-      about: "Saanvi owns the team's photo and video record and its marketing and branding. She documented every build session and leads the masked-identity content series.",
-      build: "Owns the photo and video record of the build, and supports marketing and branding.",
-      skills: ["Cinematography", "Shot planning", "Editing reels"],
-      contributions: ["Documented every build session", "Leads the masked-identity content series", "Shot the team portraits"],
-      links: [{"label": "Instagram @_glitch_d", "url": "https://www.instagram.com/_glitch_d/"}, {"label": "YouTube @Glitched_NRL-190", "url": "https://www.youtube.com/@Glitched_NRL-190"}] } },
-  { name: "Abhijay", role: "Chief Technology Officer", photo: "",
-    bio: "Leads robot design and assembly, and supports electronics and programming.",
-    details: {
-      about: "Abhijay leads the robot's design and mechanical assembly and supports the electronics and programming. He designed and assembled the chassis and fixed the infrared line-array detection fault.",
-      build: "Owns robot design and mechanical assembly, and supports electronics and programming.",
-      skills: ["Robot design", "Mechanical assembly", "ESP32-S3 Hub", "IR line array"],
-      contributions: ["Designed and assembled the chassis", "Fixed the line-sensor detection fault by reflashing the Hub"],
-      links: [{"label": "Instagram @_glitch_d", "url": "https://www.instagram.com/_glitch_d/"}, {"label": "YouTube @Glitched_NRL-190", "url": "https://www.youtube.com/@Glitched_NRL-190"}] } },
-  { name: "Naomi", role: "Chief Marketing Officer", photo: "",
-    bio: "Supports the engineering notebook and runs marketing and branding.",
-    details: {
-      about: "Naomi supports the engineering notebook and the marketing and branding work. She drafted the notebook and shapes how the team's story is published.",
-      build: "Supports the engineering notebook, marketing and branding.",
-      skills: ["Promotion strategy", "Content planning", "Campaigns"],
-      contributions: ["Drafted the engineering notebook", "Planned the marketing plays"],
-      links: [{"label": "Instagram @_glitch_d", "url": "https://www.instagram.com/_glitch_d/"}, {"label": "YouTube @Glitched_NRL-190", "url": "https://www.youtube.com/@Glitched_NRL-190"}] } },
-  { name: "Neil", role: "Chief Pilot (Driver)", photo: "",
-    bio: "Drives Pixel in matches, owns game strategy and the team website.",
-    details: {
-      about: "Neil drives Pixel in matches and owns game strategy, rules research and the team website. He turns the rulebook into a match plan for the driver-controlled period.",
-      build: "Owns driving and match play, game strategy, rules research and the team website.",
-      skills: ["TeleOp driving", "Controller mapping", "Game strategy", "Web development"],
-      contributions: ["Built the team website", "Drives Pixel in matches", "Turns the rulebook into a match plan"],
-      links: [{"label": "Instagram @_glitch_d", "url": "https://www.instagram.com/_glitch_d/"}, {"label": "YouTube @Glitched_NRL-190", "url": "https://www.youtube.com/@Glitched_NRL-190"}] } },
-  { name: "Saanvi Lalwani", role: "Chief Operating Officer \u00b7 Team Manager", photo: "",
-    bio: "Leads the engineering notebook, planning and deadlines.",
-    details: {
-      about: "Saanvi leads the engineering notebook and the planning and deadlines, and supports the judge presentation. She drew the first concept sketches and scheduled all eight build sessions.",
-      build: "Owns the engineering notebook, planning and deadlines, and supports the judge presentation.",
-      skills: ["Scheduling", "Game manual and rules", "Match timing"],
-      contributions: ["Drew the first concept sketches", "Scheduled all eight build sessions"],
-      links: [{"label": "Instagram @_glitch_d", "url": "https://www.instagram.com/_glitch_d/"}, {"label": "YouTube @Glitched_NRL-190", "url": "https://www.youtube.com/@Glitched_NRL-190"}] } },
-  { name: "Rhea", role: "Managing Director", photo: "",
-    bio: "Supports planning, deadlines and rules research.",
-    details: {
-      about: "Rhea supports planning, deadlines and rules research. She wrote the season plan and tracks every milestone.",
-      build: "Supports planning, deadlines and rules research.",
-      skills: ["Season planning", "Milestone tracking", "Rules research"],
-      contributions: ["Wrote the season plan", "Tracks every milestone"],
-      links: [{"label": "Instagram @_glitch_d", "url": "https://www.instagram.com/_glitch_d/"}, {"label": "YouTube @Glitched_NRL-190", "url": "https://www.youtube.com/@Glitched_NRL-190"}] } },
-  { name: "Neha", role: "Editor-in-Chief", photo: "",
-    bio: "Human Player on match day; designs the member posts and assembles the notebook.",
-    details: {
-      about: "Neha is the Human Player on match day and supports photo and video. She designed every member introduction post and assembles the notebook.",
-      build: "Plays Human Player on match day, supports photo and video, and assembles the engineering notebook.",
-      skills: ["Technical writing", "Editing", "Layout"],
-      contributions: ["Designed every member introduction post", "Assembles the engineering notebook"],
-      links: [{"label": "Instagram @_glitch_d", "url": "https://www.instagram.com/_glitch_d/"}, {"label": "YouTube @Glitched_NRL-190", "url": "https://www.youtube.com/@Glitched_NRL-190"}] } }
-];
-// ===== END OF EDITABLE AREA =====
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const pad = n => String(n).padStart(2, "0");
+  const href = m => "member.html?id=" + m.id;
+  function getPerson(id) {
+    const i = team.findIndex(m => m.id === String(id));
+    if (i < 0) return null;
+    return { person: team[i], index: i, prev: team[(i + team.length - 1) % team.length], next: team[(i + 1) % team.length] };
+  }
 
-// ids 1..8 for members (member.html?id=1), "mentor" for the mentor; every member gets an empty details block
-team.forEach((m, i) => { m.id = String(i + 1); m.details = Object.assign({ about: "", build: "", skills: [], contributions: [], links: [] }, m.details); });
+  // Home page: eight portrait slats
+  const slats = document.getElementById("slats");
+  if (slats) {
+    slats.innerHTML = team.map((m, i) => `
+      <a class="slat${i === 0 ? " is-on" : ""}" href="${href(m)}">
+        <img src="${esc(m.photo)}" alt="${esc(m.name)}, masked portrait" width="337" height="521" loading="lazy" decoding="async">
+        <span class="slat-n">${pad(i + 1)}</span>
+        <div class="slat-t"><h3>${esc(m.name)}</h3><p>${esc(m.role)}</p></div>
+      </a>`).join("");
+    const all = [...slats.children];
+    const on = el => all.forEach(s => s.classList.toggle("is-on", s === el));
+    all.forEach(s => { s.addEventListener("mouseenter", () => on(s)); s.addEventListener("focus", () => on(s)); });
+  }
 
-function getPerson(id) {
-  if (id === "mentor") return !mentor ? null : { p: mentor, role: mentor.title, prev: team[team.length - 1], next: team[0] };
-  const i = team.findIndex(m => m.id === id);
-  if (i < 0) return null;
-  return { p: team[i], role: team[i].role, prev: i === 0 ? (mentor || team[team.length - 1]) : team[i - 1], next: i === team.length - 1 ? (mentor || team[0]) : team[i + 1] };
-}
+  // Team page: roster and responsibility matrix
+  const roster = document.getElementById("roster");
+  if (roster) {
+    roster.innerHTML = team.map((m, i) => `
+      <li><a href="${href(m)}">
+        <div class="frame"><img src="${esc(m.photo)}" alt="${esc(m.name)}, masked portrait" width="337" height="521" loading="${i < 4 ? "eager" : "lazy"}" decoding="async"></div>
+        <h3 class="d4"><i>${pad(i + 1)}</i> ${esc(m.name)}</h3>
+        <p class="mono">${esc(m.role)}</p>
+      </a></li>`).join("");
+  }
+  const mx = document.getElementById("matrix");
+  if (mx) mx.innerHTML = matrix.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td class="mute">${esc(r[2] || "None listed")}</td></tr>`).join("");
 
-function initials(name) { return name.split(" ").map(w => w[0]).join("").slice(0, 2); }
-function avatar(p) {
-  if (p.photo) return `<div class="avatar"><img src="${p.photo}" alt="${p.name}"></div>`;
-  return `<div class="avatar">${initials(p.name)}</div>`;
-}
+  // Closing credits on the home page: the lead for each work area
+  const credits = document.getElementById("credits");
+  if (credits) credits.innerHTML = matrix.map(r => `<div><dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd></div>`).join("");
 
-// ---- home page: mentor card + vertical strips (only runs where those elements exist) ----
-const mentorEl = document.getElementById("mentor");
-if (mentorEl && mentor) {
-  mentorEl.innerHTML = `
-  <a class="mentor" href="member.html?id=mentor" aria-label="Open ${mentor.name}">
-    ${avatar(mentor)}
-    <div>
-      <h3>${mentor.name}</h3>
-      <p class="role dim">${mentor.title}</p>
-      <p>${mentor.bio}</p>
-      <span class="go">View profile &rarr;</span>
-    </div>
-  </a>`;
-}
-const membersEl = document.getElementById("members");
-if (membersEl) {
-  membersEl.innerHTML = team.map((m, i) => `
-  <a class="strip${i === 0 ? " active" : ""}" href="member.html?id=${m.id}" aria-label="Open ${m.name}">
-    <span class="idx">${String(i + 1).padStart(2, "0")}</span>
-    <span class="vtext">${m.name}</span>
-    <div class="full">
-      ${avatar(m)}
-      <h3>${m.name}</h3>
-      <p class="role">${m.role}</p>
-      <p class="bio">${m.bio}</p>
-      <span class="go">View profile &rarr;</span>
-    </div>
-  </a>`).join("");
-  const strips = [...membersEl.children];
-  const activate = el => strips.forEach(s => s.classList.toggle("active", s === el));
-  strips.forEach(s => { s.addEventListener("mouseenter", () => activate(s)); s.addEventListener("focus", () => activate(s)); });
-}
+  // Member page (member.html?id=1 … 8)
+  const root = document.getElementById("member");
+  if (root) {
+    const found = getPerson(new URLSearchParams(location.search).get("id"));
+    if (!found) {
+      document.title = "Profile not found | GLITCHED // Team 190";
+      root.innerHTML = `<section class="ph"><div class="wrap"><p class="tag">Team</p><h1 class="d1">No such profile</h1>
+        <p class="lede">There are eight members, numbered 1 to 8. Pick one from the team page.</p>
+        <p style="margin-top:2rem"><a class="link" href="team.html">See the team</a></p></div></section>`;
+    } else {
+      const { person: m, index: i, prev, next } = found;
+      document.title = m.name + " | GLITCHED // Team 190";
+      const list = (a, empty) => a.length ? `<ul class="ticks">${a.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : `<p class="mute">${empty}</p>`;
+      root.innerHTML = `
+      <section class="ph"><div class="wrap">
+        <p class="tag"><a class="inline" href="team.html">Team</a> <b>/ ${pad(i + 1)} of ${pad(team.length)}</b></p>
+        <div class="m-hero" style="margin-top:2.2rem">
+          <div class="frame"><img src="${esc(m.photo)}" alt="${esc(m.name)}, masked portrait" width="337" height="521"></div>
+          <div>
+            <p class="num" aria-hidden="true">${pad(i + 1)}</p>
+            <h1 class="d2">${esc(m.name)}</h1>
+            <p class="mono">${esc(m.role)}</p>
+            <p class="lede" style="margin-top:1.6rem">${esc(m.does.join(". "))}.</p>
+          </div>
+        </div>
+      </div></section>
+      <section class="sec"><div class="wrap cols">
+        <div class="c4"><h2 class="d4" style="margin-bottom:1rem">Leads</h2>${list(m.owns, "Leads no work area. Supports the ones listed next.")}</div>
+        <div class="c4"><h2 class="d4" style="margin-bottom:1rem">Supports</h2>${list(m.supports, "No support areas listed.")}</div>
+        <div class="c4"><h2 class="d4" style="margin-bottom:1rem">Skills</h2><ul class="chips">${m.skills.map(s => `<li>${esc(s)}</li>`).join("")}</ul></div>
+        <div class="c12"><h2 class="d4" style="margin-bottom:1rem">This season</h2>${list(m.does, "")}</div>
+        <nav class="m-nav c12" aria-label="Other members">
+          <a href="${href(prev)}"><small>Previous</small>${esc(prev.name)}</a>
+          <a class="mid mono" href="team.html">All eight</a>
+          <a href="${href(next)}"><small>Next</small>${esc(next.name)}</a>
+        </nav>
+      </div></section>`;
+    }
+  }
+  return { team, matrix, getPerson };
+})();

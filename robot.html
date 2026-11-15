@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel, the robot | GLITCHED // Team 190</title>
+<meta name="description" content="Pixel is a 2.5 kg differential-drive robot with four 12 V geared motors, a servo arm and gripper, an 8-channel infrared line array and an ESP32-S3 controller.">
+<meta name="theme-color" content="#0B0B0E">
+<link rel="canonical" href="https://nrlglitched190.vercel.app/robot.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GLITCHED // Team 190">
+<meta property="og:title" content="Pixel, the robot | GLITCHED // Team 190">
+<meta property="og:description" content="Pixel is a 2.5 kg differential-drive robot with four 12 V geared motors, a servo arm and gripper, an 8-channel infrared line array and an ESP32-S3 controller.">
+<meta property="og:url" content="https://nrlglitched190.vercel.app/robot.html">
+<meta property="og:image" content="https://nrlglitched190.vercel.app/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/logo.png">
+<link rel="preload" href="fonts/BigShouldersDisplay.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/InstrumentSans.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>(function(d){d.className="js";if(matchMedia("(min-width: 1001px) and (min-height: 640px)").matches&&!matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("pin")})(document.documentElement)</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<!-- Navigation: keep this block identical on every page -->
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="GLITCHED, Team 190. Home"><img src="images/logo.png" alt="" width="653" height="468"><span>Glitched <i>// Team 190</i></span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav-links" id="nav-links" aria-label="Main"><a href="robot.html" aria-current="page">The robot</a><a href="engineering.html">Engineering</a><a href="build-log.html">Build log</a><a href="team.html">Team</a><a href="strategy.html">Strategy</a></nav>
+</header>
+<main id="main">
+<section class="ph ph-robot">
+  <div class="hero-robot"><img src="images/pixel.webp" srcset="images/pixel-900.webp 900w, images/pixel.webp 1536w" sizes="(max-width:1000px) 112vw, 70vw" alt="Pixel, a four-wheeled robot built from clear acrylic plates, with a servo arm and gripper" width="1536" height="1024" fetchpriority="high"></div>
+  <div class="wrap">
+    <p class="tag">The robot</p>
+    <h1 class="d1">Pixel</h1>
+    <p class="lede">A 2.5 kg differential-drive robot that began as the NRL kit. Everything it can do beyond manual driving, we added.</p>
+    <nav class="subnav" aria-label="On this page"><a href="#components">Components</a><a href="#spec">Specification</a><a href="#added">What we added</a><a href="#prototypes">Prototypes</a><a href="#driver">Driver aids</a></nav>
+  </div>
+</section>
+
+<section class="sec" id="components"><div class="wrap">
+  <div class="sec-head"><p class="tag">Annotated view</p><h2 class="d2">What you are looking at</h2></div>
+  <div class="hs" data-hs>
+      <div class="hs-stage"><img src="images/pixel.webp" srcset="images/pixel-900.webp 900w, images/pixel.webp 1536w" sizes="(max-width:1000px) 92vw, 58vw" alt="Pixel seen from the front left: four off-road tyres, clear acrylic plates, a blue servo and the arm above them" width="1536" height="1024" loading="lazy" decoding="async"><button class="hs-dot" type="button" style="--x:73%;--y:7%" data-k="1" aria-pressed="false" aria-label="Servo arm">1</button><button class="hs-dot" type="button" style="--x:90.5%;--y:30%" data-k="2" aria-pressed="false" aria-label="Gripper">2</button><button class="hs-dot" type="button" style="--x:72%;--y:21%" data-k="3" aria-pressed="false" aria-label="Digital servos">3</button><button class="hs-dot" type="button" style="--x:31%;--y:34%" data-k="4" aria-pressed="false" aria-label="HEXA Command Hub">4</button><button class="hs-dot" type="button" style="--x:23%;--y:71%" data-k="5" aria-pressed="false" aria-label="Drive wheels and motors">5</button><button class="hs-dot" type="button" style="--x:47.5%;--y:67%" data-k="6" aria-pressed="false" aria-label="Motor clamps">6</button><button class="hs-dot" type="button" style="--x:19%;--y:27.5%" data-k="7" aria-pressed="false" aria-label="Plate chassis">7</button></div>
+      <ol class="hs-list"><li class="hs-item" data-hs-item data-k="1"><button type="button" aria-expanded="false"><span>01</span>Servo arm</button><p>A fixed-plane arm that sweeps a 90° envelope, from stowed to scoring height. The driver sets its angle with the right stick.</p></li><li class="hs-item" data-hs-item data-k="2"><button type="button" aria-expanded="false"><span>02</span>Gripper</button><p>Toggles between two commanded positions, open and clamped. Its profile is cut around the 95 mm CORE ring.</p></li><li class="hs-item" data-hs-item data-k="3"><button type="button" aria-expanded="false"><span>03</span>Digital servos</button><p>Two digital servos, a Robokits RKI-1248 (20 kg·cm) and a Robotics Dynamix RDS-3225, driven directly by the Hub.</p></li><li class="hs-item" data-hs-item data-k="4"><button type="button" aria-expanded="false"><span>04</span>HEXA Command Hub</button><p>An ESP32-S3 controller. It runs our C++ firmware and the link to the driver station.</p></li><li class="hs-item" data-hs-item data-k="5"><button type="button" aria-expanded="false"><span>05</span>Drive wheels and motors</button><p>Four Johnson geared motors, 12 V and 300 RPM, two per side, turn 10 cm higher-grip wheels on set-screw hubs.</p></li><li class="hs-item" data-hs-item data-k="6"><button type="button" aria-expanded="false"><span>06</span>Motor clamps</button><p>Bolted 3D-printed clamps pass the drive torque into the base plate, so a motor cannot twist in its mount under load.</p></li><li class="hs-item" data-hs-item data-k="7"><button type="button" aria-expanded="false"><span>07</span>Plate chassis</button><p>3 mm laser-cut acrylic plates on aluminium standoffs keep the frame light and the centre of mass low.</p></li></ol>
+    </div>
+</div></section>
+
+<section class="sec t-carbon" id="spec"><div class="wrap">
+  <div class="sec-head"><p class="tag">Specification</p><h2 class="d2">The numbers</h2></div>
+  <dl class="spec">
+      <div><dt>Weight</dt><dd>About 2.5 kg<small>The limit is 8 kg</small></dd></div>
+      <div><dt>Size</dt><dd>42 × 40.5 × 24 cm</dd></div>
+      <div><dt>Drive</dt><dd>Differential, tank<small>Two sides commanded independently</small></dd></div>
+      <div><dt>Motors</dt><dd>4 × 12 V, 300 RPM<small>Johnson geared, two per side</small></dd></div>
+      <div><dt>Wheels</dt><dd>10 cm<small>Higher-grip tyres on set-screw hubs</small></dd></div>
+      <div><dt>Controller</dt><dd>HEXA Command Hub<small>ESP32-S3</small></dd></div>
+      <div><dt>Actuation</dt><dd>2 digital servos<small>Arm and gripper</small></dd></div>
+      <div><dt>Sensors</dt><dd>8-channel IR array<small>Plus an LSM6DSOX inertial unit</small></dd></div>
+      <div><dt>Speed</dt><dd>0.61 m/s measured<small>On the line. 1.57 m/s is the calculated full-power figure.</small></dd></div>
+    </dl>
+  <p class="cap">The full-power speed is calculated from 300 RPM and 10 cm wheels. The line-following speed was timed over 3 s and 5 s runs.</p>
+</div></section>
+
+<section class="sec" id="added"><div class="wrap cols">
+  <div class="c5 stack"><p class="tag">On top of the kit</p><h2 class="d2">What we added</h2>
+    <p class="lede">The kit arrived as a drivable chassis with a servo arm and gripper, under manual control only.</p></div>
+  <div class="c6 s7">
+    <ul class="list-rule">
+      <li><b>Drivetrain</b><span>A Grade A drivetrain: higher-grip tyres now, with quadrature encoders planned for P3.</span></li>
+      <li><b>Line sensing</b><span>An 8-channel infrared array with closed-loop line following.</span></li>
+      <li><b>Turning</b><span>Inertial measurement for turns, with a named fault stop.</span></li>
+      <li><b>Driver aids</b><span>Precision and turbo modes, scripted turns and an emergency stop.</span></li>
+      <li><b>Firmware</b><span>Our own C++ on the HEXA Command Hub.</span></li>
+    </ul>
+    <p style="margin-top:1.8rem"><a class="link" href="engineering.html">How each system works</a></p>
+  </div>
+</div></section>
+
+<section class="sec t-paper" id="prototypes"><div class="wrap">
+  <div class="sec-head"><p class="tag">Three prototypes</p><h2 class="d2">How Pixel got here</h2></div>
+  <div class="tbl-scroll"><table class="tbl">
+    <thead><tr><th scope="col">Prototype</th><th scope="col">Configuration</th><th scope="col">Key characteristics</th><th scope="col">What worked</th><th scope="col">What led to the next</th></tr></thead>
+    <tbody>
+      <tr><td>P1</td><td>Kit chassis with arm and gripper, no line sensor</td><td>Tank drive and servo arm by controller</td><td>Simple, easy to assemble</td><td>No line detection, so no autonomy</td></tr>
+      <tr><td>P2</td><td>P1 plus the 8-channel infrared array and inertial unit</td><td>PID line following, junction stop</td><td>Stays on the line at about 0.61 m/s</td><td>Needs recalibration; the inertial unit reads 1.6× too far</td></tr>
+      <tr><td>P3 <span class="st st-planned" style="margin-left:.5rem">Planned</span></td><td>P2 plus OE-28 encoders and full mission code</td><td>Encoder distance, pick-up and drop</td><td>Expected: precise distances</td><td>More tuning. Not yet fitted or tested.</td></tr>
+    </tbody>
+  </table></div>
+  <p style="margin-top:2rem"><a class="link" href="build-log.html">Read the build log</a></p>
+</div></section>
+
+<section class="sec" id="driver"><div class="wrap cols">
+  <div class="c5 stack"><p class="tag">Driver aids and repair</p><h2 class="d2">Built to be driven and fixed</h2></div>
+  <div class="c6 s7">
+    <ul class="list-rule">
+      <li><b>Two speeds</b><span>Precision mode for scoring approaches, turbo for crossing the open field.</span></li>
+      <li><b>Scripted turns</b><span>90° and 180° turns are closed-loop routines on the face buttons, so accuracy does not depend on driver feel.</span></li>
+      <li><b>Emergency stop</b><span>On a shoulder button, reachable without a thumb leaving either stick.</span></li>
+      <li><b>Quick repair</b><span>Set-screw hubs and bolted clamps allow a wheel or motor swap in roughly 20 minutes, with hand tools and a soldering iron.</span></li>
+      <li><b>Before each match</b><span>The infrared array is recalibrated on the venue mat to allow for its surface.</span></li>
+    </ul>
+    <p style="margin-top:1.8rem"><a class="link" href="engineering.html#controls">See the controller layout</a></p>
+  </div>
+</div></section>
+</main>
+<!-- Footer: keep this block identical on every page -->
+<footer class="foot"><div class="foot-row">
+  <p>Glitched // Team 190<br>National Public School, Bangalore<br>National Robotics League 2026, Hyperdrive</p>
+  <nav aria-label="Elsewhere"><a href="https://www.instagram.com/_glitch_d/" rel="noopener">Instagram @_glitch_d</a><a href="https://www.youtube.com/@Glitched_NRL-190" rel="noopener">YouTube @Glitched_NRL-190</a></nav>
+</div></footer>
+<script src="js/site.js"></script>
+</body>
+</html>
