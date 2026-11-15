@@ -74,3 +74,17 @@ a.mentor .go{display:inline-block;margin-top:.2rem}
 .strip .full .avatar{aspect-ratio:2.6/1}
 .strip{padding:.9rem 1rem}
 @media(max-width:520px){.strip .full .avatar{aspect-ratio:16/6}}
+
+/* ---- alignment pass ---- */
+/* member page: name, role chip and bio each on their own line, left-aligned with the big number */
+.m-info{display:flex;flex-direction:column;align-items:flex-start}
+.m-info h1{margin:.3rem 0 .8rem}
+.m-role{max-width:100%;line-height:1.4;margin-bottom:1.1rem}
+.m-bio{max-width:52ch;margin:0}
+.m-num{margin-left:-.04em}
+/* team cards: equal-height rows, roles reserve two lines, "View profile" pinned to the bottom */
+.strip .full{flex:1}
+.strip .full h3{line-height:1.2}
+.strip .role{line-height:1.35;min-height:2.7em;display:flex;align-items:flex-start}
+.strip .bio{flex:1}
+.strip .go{margin-top:auto;padding-top:.2rem}

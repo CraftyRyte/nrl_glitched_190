@@ -15,7 +15,7 @@ document.querySelectorAll(".copy-email").forEach(btn => btn.addEventListener("cl
 }));
 
 // Terminal typing in the hero (edit the text here)
-const line = "> booting robot... compiling... done.";
+const line = "> In a world of noise, glitch the system.";
 const out = document.getElementById("typed");
 let i = 0;
 (function type() {
@@ -47,3 +47,12 @@ const so = new IntersectionObserver(entries => {
 }, { rootMargin: "-50% 0px -50% 0px" });
 slides.forEach(s => so.observe(s));
 
+
+// Countdown to the NRL 2026 HYPERDRIVE Regional (21 Nov 2026, local date)
+(function () {
+  const el = document.getElementById("countdown");
+  if (!el) return;
+  const now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const days = Math.round((new Date(2026, 10, 21) - today) / 864e5);
+  el.textContent = days > 1 ? "EVENT IN " + days + " DAYS" : days === 1 ? "EVENT TOMORROW" : days === 0 ? "EVENT DAY" : "NRL 2026 COMPLETE";
+})();

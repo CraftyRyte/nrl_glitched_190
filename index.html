@@ -63,16 +63,16 @@
       <div class="hero-text">
       <h1 class="glitch big" data-text="glitched">glitched</h1>
       <p class="boot"><span id="typed"></span><span class="cursor">_</span></p>
-      <p class="sub">We are an eight-student team building an autonomous automobile for the National Robotics League, almost entirely through code.</p>
+      <p class="sub">Eight Grade 11 students from National Public School, Bangalore, building an autonomous automobile robot for the National Robotics League, almost entirely through code.</p>
       <div class="system-readout" aria-label="Team and project status">
-        <span><i></i> SYSTEM ONLINE</span><span>NRL / AUTOMOBILE</span><span>TEAM SIZE: 08</span>
+        <span><i></i> SYSTEM ONLINE</span><span>HYPERDRIVE 2026</span><span>TEAM 190</span><span>TEAM SIZE: 08</span><span id="countdown"></span>
       </div>
       <a class="btn" href="#team">Meet the team</a>
       </div>
       <div class="logo-hud"><span class="glow"></span><img src="images/logo.png" alt="glitched logo"><span class="hud-tag">GLITCHED // NRL TEAM</span></div>
       <div class="scroll-hint">scroll</div>
     </section>
-    <div class="marquee" aria-hidden="true"><div class="mq-track"><span>CODE</span><i>✦</i><span>BUILD</span><i>✦</i><span>REPEAT</span><i>✦</i><span>AUTONOMOUS</span><i>✦</i><span>NRL</span><i>✦</i><span>EIGHT MINDS</span><i>✦</i><span>ONE ROBOT</span><i>✦</i><span>CODE</span><i>✦</i><span>BUILD</span><i>✦</i><span>REPEAT</span><i>✦</i><span>AUTONOMOUS</span><i>✦</i><span>NRL</span><i>✦</i><span>EIGHT MINDS</span><i>✦</i><span>ONE ROBOT</span><i>✦</i></div></div>
+    <div class="marquee" aria-hidden="true"><div class="mq-track"><span>SENSE</span><i>✦</i><span>DECIDE</span><i>✦</i><span>DRIVE</span><i>✦</i><span>REPEAT</span><i>✦</i><span>NRL</span><i>✦</i><span>EIGHT MINDS</span><i>✦</i><span>ONE ROBOT</span><i>✦</i><span>SENSE</span><i>✦</i><span>DECIDE</span><i>✦</i><span>DRIVE</span><i>✦</i><span>REPEAT</span><i>✦</i><span>NRL</span><i>✦</i><span>EIGHT MINDS</span><i>✦</i><span>ONE ROBOT</span><i>✦</i></div></div>
 
 
     <section id="about" class="wrap slide">
@@ -86,29 +86,33 @@
       </ul>
 
       <h2 class="h-sub">About Glitched</h2>
-      <p class="lead sm">Eight students, one <strong>code-driven automobile robot</strong>, and a pilot at the controls.</p>
+      <p class="lead sm">Eight Grade 11 students, one <strong>code-driven automobile robot</strong> named Pixel, and a pilot at the controls.</p>
       <div class="stats">
         <div><b>8</b><span>members</span></div>
-        <div><b>1</b><span>pilot</span></div>
         <div><b>1</b><span>robot, run by code</span></div>
+        <div><b>4</b><span>drive motors</span></div>
+        <div><b>8</b><span>build sessions</span></div>
       </div>
       <ul class="roles">
-        <li><strong>Code</strong> drive logic and strategy</li>
-        <li><strong>Piloting</strong> navigating and driving</li>
-        <li><strong>Leadership</strong> direction under pressure</li>
-        <li><strong>Creative</strong> video and editing</li>
-        <li><strong>Marketing</strong> ads, social, editorial</li>
+        <li><strong>Chief Executive Officer</strong> team lead, autonomous code, judge presentation</li>
+        <li><strong>Chief Technology Officer</strong> robot design and assembly</li>
+        <li><strong>Chief Operating Officer</strong> planning, deadlines, notebook</li>
+        <li><strong>Chief Marketing Officer</strong> marketing, branding, notebook drafts</li>
+        <li><strong>Managing Director</strong> season plan and milestones</li>
+        <li><strong>Director of Photography</strong> photo, video and social content</li>
+        <li><strong>Editor-in-Chief</strong> notebook, member posts, Human Player</li>
+        <li><strong>Chief Pilot (Driver)</strong> driving, strategy, team website</li>
       </ul>
-      <p class="closer">Together we aim for technical excellence, strategic thinking and real collaboration.</p>
+      <p class="closer">In a world of noise, glitch the system.</p>
     </section>
 
     <section id="challenge" class="wrap slide">
       <p class="eyebrow">02 // challenge</p>
       <h2>The challenge</h2>
-      <p>Every team receives the <strong>same automobile components</strong>. What the vehicle does is <strong>decided by the code</strong>. All 8 members contribute through different methods involving writing the code, piloting the automobile, marketing, videographing, editing, strategizing and team management.</p>
+      <p>Every team starts from the <strong>same NRL kit</strong>. We engineered upgrades on top of it, and what the vehicle does is <strong>decided by the code</strong>. All 8 members contribute: writing the code, piloting, marketing, filming, editing, strategy and team management.</p>
       <ol class="steps">
-        <li><h3>Receive the parts</h3><p>Motors, sensors, chassis, and a controller. Identical for every team. Advertising the team occurs during this stage.</p></li>
-        <li><h3>Code it to life</h3><p>Drive logic, sensor handling, and strategy are all written by us.</p></li>
+        <li><h3>Start from the kit</h3><p>A chassis with a servo arm and gripper, controlled manually. The same starting point for every team.</p></li>
+        <li><h3>Upgrade and code it</h3><p>Four geared 12 V motors, an 8-channel line array and an inertial sensor, driven by our own C++ firmware on the ESP32-S3 Hub.</p></li>
         <li><h3>Compete</h3><p>Fast-paced matches, skill challenges, and a team presentation to the judges.</p></li>
       </ol>
     </section>
@@ -116,14 +120,16 @@
     <section id="build" class="wrap slide">
       <p class="eyebrow">03 // build</p>
       <h2>Our build</h2>
-      <p>Replace this with your real details. A log of what broke and how you fixed it is the most convincing thing on the page.</p>
+      <p><strong>Pixel</strong> started as the NRL kit. We added four geared 12 V motors with higher-grip wheels, an 8-channel infrared line array, an inertial sensor and the HEXA Command Hub (ESP32-S3) running our own C++ firmware. It measures 42 × 40.5 × 24 cm and weighs about 2.5 kg.</p>
       <div class="terminal">
-        <div class="tbar"><i></i><i></i><i></i><span>test_drive.py</span></div>
-        <p><span class="dim">$</span> run test_drive.py</p>
-        <p class="err">ERROR: left motor drifts at low speed</p>
-        <p class="ok">FIXED: added PID correction to wheel speed</p>
-        <p class="err">ERROR: distance sensor noisy near walls</p>
-        <p class="ok">FIXED: averaged last 5 readings</p>
+        <div class="tbar"><i></i><i></i><i></i><span>build_log</span></div>
+        <p><span class="dim">$</span> show recent fixes</p>
+        <p class="err">ERROR: Hub did not detect the line sensor</p>
+        <p class="ok">FIXED: reflashed the Hub</p>
+        <p class="err">ERROR: motors ran reversed</p>
+        <p class="ok">FIXED: inverted the left side in firmware</p>
+        <p class="err">ERROR: inertial sensor over-read distance by about 1.6x</p>
+        <p class="ok">FIXED: distances from taped references, sensor used for turns only</p>
       </div>
       <a class="btn back" href="build-log.html">Read the full build log</a>
     </section>
@@ -139,8 +145,8 @@
   <footer id="contact" class="slide">
     <div class="logo-hud small"><span class="glow"></span><img src="images/logo.png" alt="glitched logo"></div>
     <h2 class="glitch" data-text="glitched">glitched</h2>
-    <p class="contact-line"><a id="contact-address" href="mailto:home.smart010203@gmail.com">home.smart010203@gmail.com</a><button class="copy-email" type="button" data-copy="home.smart010203@gmail.com" aria-label="Copy email address">COPY</button><span aria-hidden="true">&nbsp;|&nbsp;</span><span>_glitch_d</span></p>
-    <p class="dim">Code . Build . Repeat</p>
+    <p class="contact-line"><a id="contact-address" href="mailto:home.smart010203@gmail.com">home.smart010203@gmail.com</a><button class="copy-email" type="button" data-copy="home.smart010203@gmail.com" aria-label="Copy email address">COPY</button><span aria-hidden="true">&nbsp;|&nbsp;</span><a href="https://www.instagram.com/_glitch_d/" target="_blank" rel="noopener">Instagram @_glitch_d</a><span aria-hidden="true">&nbsp;|&nbsp;</span><a href="https://www.youtube.com/@Glitched_NRL-190" target="_blank" rel="noopener">YouTube @Glitched_NRL-190</a></p>
+    <p class="dim">Team 190 · NRL 2026 HYPERDRIVE · National Public School, Bangalore</p>
   </footer>
 
   <script src="js/fx.js"></script>

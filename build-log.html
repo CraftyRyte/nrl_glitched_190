@@ -36,11 +36,15 @@
   <main id="top">
     <section class="wrap" style="padding-top:8rem;min-height:100vh">
       <h2>Build log</h2>
-      <p class="lead">Every bug we hit and how we fixed it. Replace these sample entries with your real ones.</p>
+      <p class="lead">Every bug we hit and how we fixed it. Our first build session was on 17 October 2026, and we had eight build sessions by 11 November.</p>
       <div class="log-list">
-        <div class="log-entry"><h3>Entry 01: left motor drift</h3><p class="err">ERROR: left motor drifts at low speed</p><p class="ok">FIXED: added PID correction to wheel speed</p></div>
-        <div class="log-entry"><h3>Entry 02: noisy distance sensor</h3><p class="err">ERROR: distance sensor noisy near walls</p><p class="ok">FIXED: averaged last 5 readings</p></div>
-        <div class="log-entry"><h3>Entry 03: your next entry</h3><p class="dim">Add what broke, what you tried, and what finally worked.</p></div>
+        <div class="log-entry"><h3>Entry 01: Build stopped by a typo</h3><p class="err">ERROR: <code>TankDrve</code> instead of <code>TankDrive</code> stopped the build</p><p class="ok">FIXED: corrected the name and rebuilt</p></div>
+        <div class="log-entry"><h3>Entry 02: Line sensor not detected</h3><p class="err">ERROR: the Hub did not detect the line sensor</p><p class="ok">FIXED: reflashed the Hub</p></div>
+        <div class="log-entry"><h3>Entry 03: Motors ran reversed</h3><p class="err">ERROR: motors ran in the wrong direction</p><p class="ok">FIXED: inverted the left side in firmware</p></div>
+        <div class="log-entry"><h3>Entry 04: Inertial sensor distance error</h3><p class="err">ERROR: the inertial sensor over-read distance by about 1.6x</p><p class="ok">FIXED: distances now come from taped references, and the sensor is used for turns only</p></div>
+        <div class="log-entry"><h3>Entry 05: Line following on new tape</h3><p class="err">ERROR: line following needed recalibration on new tape</p><p class="ok">FIXED: recalibrate the sensor array at each venue</p></div>
+        <div class="log-entry"><h3>Decision: 300 RPM motors</h3><p class="ok">We kept 300 RPM over 600 RPM because traction, not torque, limits pushing. We then upgraded to Grade A motors and new wheels.</p></div>
+        <div class="log-entry"><h3>Decision: no rotating arm</h3><p class="ok">We rejected a 180° rotating arm because it was unstable and harder to drive.</p></div>
       </div>
       <a class="btn back" href="index.html#build">Back to the site</a>
     </section>
